@@ -24,6 +24,7 @@ class TranscriptionService
             foreach($split as $section){
                 $newItem = new Transcription();
                 $newItem->sentence = $section;
+                $newItem->page_id = $content->page_id;
 
                 if(preg_match("/(?=\[(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)\])/", $section)){
                     $newItem->starts_at = substr($section, 1, strpos($section, ']') - 1);

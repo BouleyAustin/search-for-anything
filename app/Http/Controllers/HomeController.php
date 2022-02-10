@@ -9,20 +9,26 @@ class HomeController extends Controller
 {
     public static function showSearchPage($name)
     {
-        $pageDetails = Auth::user()->pages()->first()->toArray();
+        if($page = Page::where('url_ending', $name)->first()){
+            $pageDetails = $page->toArray();
 
-        $pageDetails = [
-            'search_title' => $pageDetails['search_title'] ?? 'The ' . $pageDetails['name'] . ' Search Engine',
-            'sub_search_title' => $pageDetails['sub_search_title'] ?? 'Search For Anything I Have Ever Said!',
-            'search_bar_input' => $pageDetails['search_bar_input'] ?? 'What do you want to learn about?',
-            'search_bar_text' => $pageDetails['search_bar_text'] ?? 'Most Recent Searches: Your Top Content Ideas, etc',
-            'text_color' => $pageDetails['text_color'] ?? 'black',
-            'background_color' => $pageDetails['background_color'] ?? '#f9fafb',
-        ];
+            $pageDetails = [
+                'search_title' => $pageDetails['search_title'] ?? 'The ' . $pageDetails['name'] . ' Search Engine',
+                'sub_search_title' => $pageDetails['sub_search_title'] ?? 'Search For Anything I Have Ever Said!',
+                'search_bar_input' => $pageDetails['search_bar_input'] ?? 'What do you want to learn about?',
+                'search_bar_text' => $pageDetails['search_bar_text'] ?? 'Most Recent Searches: Your Top Content Ideas, etc',
+                'text_color' => $pageDetails['text_color'] ?? 'black',
+                'background_color' => $pageDetails['background_color'] ?? '#f9fafb',
+                'id' => $pageDetails['id'],
+            ];
 
-        return view('search-page', [
-            'pageDetails' => $pageDetails
-        ]);
+            return view('search-page', [
+                'pageDetails' => $pageDetails
+            ]);
+        }
+        else{
+            return view('landing');
+        }
     }
 
     public static function showContentPage()

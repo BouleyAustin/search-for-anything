@@ -16,11 +16,14 @@ class CreateTranscriptionsTable extends Migration
         Schema::create('transcriptions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('content_id');
+            $table->unsignedBigInteger('page_id')->index();
             $table->longText('sentence')->nullable();
             $table->string('starts_at')->nullable();
             $table->string('ends_at')->nullable();
             $table->decimal('confidence')->nullable();
             $table->string('chapter')->nullable();
+            $table->string('podcast_rss')->nullable();
+            $table->string('episode_link')->nullable();
             $table->timestamps();
 
             $table->foreign('content_id')

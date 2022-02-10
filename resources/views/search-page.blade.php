@@ -12,6 +12,8 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+        @livewireStyles
+
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
@@ -26,7 +28,7 @@
                 </div>
             </div>
             <div class="mt-8">
-                <livewire:search-bar :textColor="$pageDetails['text_color']" :searchBarInput="$pageDetails['search_bar_input']" :searchBarText="$pageDetails['search_bar_text']"/>
+                <livewire:search-bar :textColor="$pageDetails['text_color']" :searchBarInput="$pageDetails['search_bar_input']" :searchBarText="$pageDetails['search_bar_text']" :pageId="$pageDetails['id']"/>
             </div>
         </div>
     </main>
@@ -77,4 +79,5 @@
             </div>
         </div>
     </footer>
+    @livewireScripts
 </body>
