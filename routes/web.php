@@ -29,6 +29,6 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('landing');
-})->name('landing');
+})->name('home');
 
 Route::get('/{name}', '\App\Http\Controllers\HomeController@showSearchPage')->name('search-page');
