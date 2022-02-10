@@ -6,8 +6,8 @@
                 wire:keydown.enter="redirectTo"
                 wire:keydown.escape="clear"
                 type="search"
-                placeholder="{{ 'Search for any topic or phrase you want to hear more about...' }}"
-                class="shadow-sm hover:border-gray-200 block w-full sm:text-sm border-gray-100 rounded-md"
+                placeholder="{{ $searchBarInput ?? 'What do you want to learn about?' }}"
+                class="border shadow-xs hover:border-gray-300 block w-full sm:text-sm border-gray-200 rounded-md text-center"
                 required autofocus>
             <x-jet-secondary-button wire:click="redirectTo">
                 <p>&#128270;</p>
@@ -36,8 +36,8 @@
         @endif
     </div>
     @if(count($searchResults) == 0)
-        <div class="mt-10 text-center">
-            Most Recent Searches: Trend Following, Impeccable Stock Software, Swing Trading Strategies, etc
+        <div class="mt-10 text-center {{ $textColor != null ? 'text-' . $textColor : '' }}">
+            {{ $searchBarText ?? 'Most Recent Searches: Your Top Content Ideas, etc' }}
         </div>
     @endif
 </div>

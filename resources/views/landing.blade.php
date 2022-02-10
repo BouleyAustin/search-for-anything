@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="relative bg-white overflow-hidden">
+    <div id="explanation" class="relative bg-white overflow-hidden">
         <div class="hidden lg:block lg:absolute lg:inset-0" aria-hidden="true">
             <svg class="absolute top-0 left-1/2 transform translate-x-64 -translate-y-8" width="640" height="784" fill="none" viewBox="0 0 640 784">
                 <defs>
@@ -32,18 +32,18 @@
                             </div>
                         </div>
                         <div class="hidden md:block md:ml-10 md:space-x-10">
-                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">How It Works</a>
+                            <a href="#explanation" class="font-medium text-gray-500 hover:text-gray-900">How It Works</a>
 
-                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Features</a>
+                            <a href="#features" class="font-medium text-gray-500 hover:text-gray-900">Features</a>
 
-                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Examples</a>
+                            <a href="#examples" class="font-medium text-gray-500 hover:text-gray-900">Examples</a>
 
-                            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">FAQ</a>
+                            <a href="#faq" class="font-medium text-gray-500 hover:text-gray-900">FAQ</a>
                         </div>
                     </div>
                     <div class="hidden md:block text-right">
           <span class="inline-flex rounded-md shadow-md ring-1 ring-black ring-opacity-5">
-            <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"> Log in </a>
+            <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"> Join The Waitlist </a>
           </span>
                     </div>
                 </nav>
@@ -88,17 +88,17 @@
                 </div>
             </div>
 
-            <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-32">
+            <div class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 sm:px-6 lg:mt-32">
                 <div class="lg:grid lg:grid-cols-12 lg:gap-8">
                     <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
                         <h1>
                             <span class="block text-sm font-semibold uppercase tracking-wide text-gray-500 sm:text-base lg:text-sm xl:text-base">Coming soon</span>
                             <span class="mt-1 block text-4xl tracking-tight font-extrabold sm:text-5xl xl:text-6xl">
-              <span class="block text-gray-900">Data to enrich your</span>
-              <span class="block text-indigo-600">online business</span>
-            </span>
+                              <span class="block text-gray-900">Is your podcast doing</span>
+                              <span class="block text-indigo-600">enough for you?</span>
+                            </span>
                         </h1>
-                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua ad ad non deserunt sunt.</p>
+                        <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Use your podcast to automatically build community, increase your SEO presence, and skyrocket your WOW factor by having your own podcast search engine</p>
                         <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                             <p class="text-base font-medium text-gray-900">Sign up to get notified when it’s ready.</p>
                             <form action="#" method="POST" class="mt-3 sm:flex">
@@ -136,11 +136,11 @@
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
     </div>
 
-    <div class="relative bg-white py-16 sm:py-24 lg:py-32">
+    <div id="features" class="relative bg-white py-8 sm:py-10 lg:py-12">
         <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
             <h2 class="text-base font-semibold tracking-wider text-indigo-600 uppercase">Deploy faster</h2>
             <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Everything you need to deploy your app</p>
@@ -254,8 +254,8 @@
         </div>
     </div>
 
-    <div class="bg-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div id="examples" class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
                 <div>
                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Used by the world's most average companies</h2>
@@ -293,11 +293,31 @@
         </div>
     </div>
 
-    <div class="bg-white">
+    <div id="faq" class="bg-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-extrabold text-gray-900 text-center">Frequently asked questions</h2>
             <div class="mt-12">
                 <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12 lg:grid-cols-3">
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                        <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                        <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                        <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                        <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                    </div>
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
+                        <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
+                    </div>
                     <div>
                         <dt class="text-lg leading-6 font-medium text-gray-900">What&#039;s the best thing about Switzerland?</dt>
                         <dd class="mt-2 text-base text-gray-500">I don&#039;t know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.</dd>
@@ -310,7 +330,7 @@
     </div>
 
     <div class="bg-white">
-        <div class="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div class="mb-36 max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
                 <span class="block">Ready to dive in?</span>
                 <span class="block">Start your free trial today.</span>

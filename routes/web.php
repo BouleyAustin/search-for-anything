@@ -26,3 +26,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/custom', function () {
 Route::get('/', function () {
     return view('landing');
 })->name('landing');
+
+Route::get('/{name}', '\App\Http\Controllers\HomeController@showSearchPage')->name('search-page');

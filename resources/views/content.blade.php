@@ -13,14 +13,22 @@
                         <p>The Impeccable Investor Content</p>
                         <livewire:create-content/>
                     </div>
-                    <div class="flex flex-wrap space-x-3 space-y-3">
+                    <div class="flex flex-wrap gap-3">
                         @foreach($contents as $content)
                             <div class="max-w-min border rounded-md p-3 hover:bg-gray-50">
-                                <div class="h-48 w-48">
+                                <div class="h-42 w-42">
                                     <img src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg"/>
                                 </div>
-                                <div class="text-center">
-                                    <p>{{ $content['title'] }}</p>
+                                <div class="mt-2 text-center">
+                                    <p>{{ substr($content['title'], 0, 35) }}</p>
+                                </div>
+                                <div class="mt-2 flex justify-center items-center gap-2">
+                                    <x-jet-secondary-button>
+                                        Edit
+                                    </x-jet-secondary-button>
+                                    <x-jet-secondary-button>
+                                        Export
+                                    </x-jet-secondary-button>
                                 </div>
                             </div>
                         @endforeach

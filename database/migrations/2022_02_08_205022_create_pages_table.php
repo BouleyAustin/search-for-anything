@@ -22,6 +22,7 @@ class CreatePagesTable extends Migration
             $table->string('sub_search_title')->nullable();
             $table->string('search_bar_input')->nullable();
             $table->string('search_bar_text')->nullable();
+            $table->string('text_color')->nullable();
             $table->string('background_color')->nullable();
             $table->string('background_image')->nullable();
             $table->string('search_bar_background_color')->nullable();
@@ -35,6 +36,9 @@ class CreatePagesTable extends Migration
             $table->string('link_linkedin')->nullable();
             $table->string('link_home')->nullable();
             $table->string('link_url')->nullable();
+            $table->string('link_podcast')->nullable();
+            $table->string('podcast_rss')->nullable();
+            $table->boolean('automatic_transcription')->default(false);
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_robots')->nullable();

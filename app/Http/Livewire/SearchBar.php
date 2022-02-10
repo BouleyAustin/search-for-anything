@@ -8,6 +8,9 @@ class SearchBar extends Component
 {
     public $search;
     public $searchResults = [];
+    public $searchBarText;
+    public $searchBarInput;
+    public $textColor;
 
     public function render()
     {
