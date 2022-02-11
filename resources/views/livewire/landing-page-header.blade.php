@@ -9,7 +9,7 @@
                               <span class="block text-indigo-600">enough for you?</span>
                             </span>
                 </h1>
-                <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Use your podcast to automatically build community, increase your SEO presence, and skyrocket your WOW factor by having your own podcast search engine</p>
+                <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">Turn your podcast into your biggest marketing asset! Use your podcast to increase your SEO presence and build community through your own search engine and SEO automation.</p>
                 <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
                     <p class="text-base font-medium text-gray-900">Sign up to get notified when it’s ready to test.</p>
                     <div class="mt-3 sm:flex">
@@ -57,7 +57,7 @@
         <x-slot name="content">
 
             <div class="mt-4">
-                <div style="padding:56.6% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/r3eNhPGM8n0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+                <div style="padding:56.6% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/OR8kkqkmpjA" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
             </div>
 
         </x-slot>

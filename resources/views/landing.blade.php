@@ -49,7 +49,108 @@
         </div>
     </div>
 
-    <div id="features" class="relative bg-white py-8 sm:py-10 lg:py-12">
+    <div class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
+            <div>
+                <h2 class="text-base font-semibold text-indigo-600 uppercase tracking-wide">Everything you need</h2>
+                <p class="mt-2 text-3xl font-extrabold text-gray-900">All-in-one platform</p>
+                <p class="mt-4 text-lg text-gray-500">Turn your podcast into your biggest marketing asset through a search engine and SEO automation.</p>
+            </div>
+            <div class="mt-12 lg:mt-0 lg:col-span-2">
+                <dl class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:grid-rows-4 sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 lg:gap-x-8">
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #1: You Do You!</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">You record, edit and upload your podcast to your host as usual. Now, sit back and let our software do the rest!</dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #2: Create Your Search Engine</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will create a custom search engine for your podcast to help your listeners find episodes and increase your downloads.</dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #3: Monitor Your Podcast</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will automatically monitor your podcast to track when a new episode comes out without you needing to tell us.</dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #4: Transcribe New Episodes</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software uses one of the most cutting edge and advanced AI models to accurately transcribe your episode into text.</dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #4: Add New Episode To Your Search Engine</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will take the new episode and transcript and add it to your personal search engine database.</dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #5: Create A Dedicate Episode Page</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will create a dedicated episode page with the transcript to help your show be found on Google and increase your SEO ratings.</dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #6: Give You Analytics On What Content To Make</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will share what your listeners are searching for on your search engine to help you make content they actually want.</dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <!-- Heroicon name: outline/check -->
+                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #7: YOU NOW HAVE A GROWING AND SUCCESSFUL PODCAST</p>
+                        </dt>
+                        <dd class="mt-2 ml-9 text-base text-gray-500">You are now growing your podcast by focusing on creating amazing content and letting SearchForAnything.io handle the rest!</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <div id="features" class="relative bg-white py-8 sm:py-8 lg:py-12">
         <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
             <h2 class="text-base font-semibold tracking-wider text-indigo-600 uppercase">Work Smarter, Not Harder</h2>
             <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">Everything you need to grow your podcast</p>
@@ -65,7 +166,7 @@
                                     </span>
                                 </div>
                                 <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Have WOW Factor</h3>
-                                <p class="mt-5 text-base text-gray-500">Set yourself apart from other podcasters by having your own search engine! This will set you apart, help your listeners, and make you stand out. If GaryVee has one <a href="https://search.garyvaynerchuk.com" target="_blank" class="underline">(click here)</a>, shouldn't we have one too?</p>
+                                <p class="mt-5 text-base text-gray-500">Set yourself apart from other podcasters by having your own search engine! This will set you apart, help your listeners, and increase your downloads. If GaryVee has one <a href="https://search.garyvaynerchuk.com" target="_blank" class="underline">(click here)</a>, shouldn't we have one too?</p>
                             </div>
                         </div>
                     </div>
@@ -107,7 +208,7 @@
                                     </span>
                                 </div>
                                 <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Build Community</h3>
-                                <p class="mt-5 text-base text-gray-500">The best way to build a cult following for your podcast is by being different, making content easily digestible, and being relatable. A podcast search engine will help you do that!</p>
+                                <p class="mt-5 text-base text-gray-500">The best way to build a following for your podcast is by being different and allowing your content to be easily found and understood. A podcast search engine will help you do that!</p>
                             </div>
                         </div>
                     </div>
@@ -152,7 +253,7 @@
             <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
                 <div>
                     <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Podcasters coming to SearchForAnything.io soon!</h2>
-                    <p class="mt-3 max-w-3xl text-lg text-gray-500">These podcasters see the potential of SearchForAnything.io exclusive podcast search engine! You'll be able to check out their search engine once they are setup.</p>
+                    <p class="mt-3 max-w-3xl text-lg text-gray-500">These podcasters see the potential of SearchForAnything.io exclusive podcast search engine and SEO automation! You'll be able to check out their search engine once they are setup.</p>
                     <div class="mt-8 sm:flex">
                         <div class="rounded-md shadow">
                             <a href="#explanation" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Request BETA Access</a>
@@ -168,12 +269,12 @@
                         <p class="text-sm mt-2 text-gray-600">50k podcast downloads, 240K on Instagram</p>
                     </div>
                     <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <p class="text-lg text-gray-900 font-bold">The Lily Kate Show?</p>
+                        <p class="text-lg text-gray-900 font-bold">The Lily Kate Show</p>
                         <p class="text-sm mt-2 text-gray-600">30K podcast downloads, 45K on Instagram</p>
                     </div>
                     <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <p class="text-lg text-gray-900 font-bold">The Millennial Investing Podcast?</p>
-                        <p class="text-sm mt-2 text-gray-600">4.5 Million podcast downloads, 15K on Instagram</p>
+                        <p class="text-lg text-gray-900 font-bold">Stocks and Sandals</p>
+                        <p class="text-sm mt-2 text-gray-600">30K podcast downloads, 15K on Instagram</p>
                     </div>
                     <div class="col-span-1 py-8 px-8 bg-gray-50">
                         <p class="text-lg text-gray-900 font-bold">YOU?</p>
