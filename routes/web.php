@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/app/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/content', '\App\Http\Controllers\HomeController@showContentPage')->name('content');
+Route::middleware(['auth:sanctum', 'verified'])->get('/app/content', '\App\Http\Controllers\HomeController@showContentPage')->name('content');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/custom', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/app/custom', function () {
     return view('custom');
 })->name('custom');
 
@@ -32,3 +32,5 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::get('/{name}', '\App\Http\Controllers\HomeController@showSearchPage')->name('search-page');
+
+Route::get('/{name}/{episodeName}', '\App\Http\Controllers\HomeController@showEpisodePage')->name('episode-page');
