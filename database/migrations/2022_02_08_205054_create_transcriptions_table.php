@@ -22,8 +22,6 @@ class CreateTranscriptionsTable extends Migration
             $table->string('ends_at')->nullable();
             $table->decimal('confidence')->nullable();
             $table->string('chapter')->nullable();
-            $table->string('podcast_rss')->nullable();
-            $table->string('episode_link')->nullable();
             $table->timestamps();
 
             $table->foreign('content_id')
