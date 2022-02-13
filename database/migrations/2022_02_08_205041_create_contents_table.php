@@ -16,6 +16,7 @@ class CreateContentsTable extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('page_id');
+            $table->string('url_ending')->unique();
             $table->string('title')->nullable();
             $table->string('podcast_rss')->nullable();
             $table->string('podcast_link')->nullable();

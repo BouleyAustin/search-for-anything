@@ -48,6 +48,7 @@ class CreateContent extends Component
         $newContent->platform = $this->content['type'];
         $newContent->podcast_link = $this->content['podcast_link'];
         $newContent->video_link = $this->content['video_link'];
+        $newContent->url_ending = str_replace(' ', '-', $this->content['name']) . $newContent->id;
         Auth::user()->pages()->first()->contents()->save($newContent);
 
         $this->content['file']->store('temp_transcripts');

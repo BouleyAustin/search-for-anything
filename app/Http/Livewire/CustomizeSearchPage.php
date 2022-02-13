@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Services\HelperService;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -12,16 +13,7 @@ class CustomizeSearchPage extends Component
     public function mount()
     {
         $this->pageDetails = Auth::user()->pages()->first()->toArray();
-
-        $this->pageDetails = [
-            'search_title' => $this->pageDetails['search_title'] ?? 'The ' . $this->pageDetails['name'] . ' Search Engine',
-            'sub_search_title' => $this->pageDetails['sub_search_title'] ?? 'Search For Anything I Have Ever Said!',
-            'search_bar_input' => $this->pageDetails['search_bar_input'] ?? 'What do you want to learn about?',
-            'search_bar_text' => $this->pageDetails['search_bar_text'] ?? 'Most Recent Searches: Your Top Content Ideas, etc',
-            'text_color' => $this->pageDetails['text_color'] ?? 'black',
-            'background_color' => $this->pageDetails['background_color'] ?? '#f9fafb',
-            'url_ending' => $this->pageDetails['url_ending'],
-        ];
+        $this->pageDetails = HelperService::setPageDetailsDefaults($this->pageDetails);
     }
 
     public function save()
