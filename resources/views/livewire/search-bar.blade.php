@@ -39,7 +39,7 @@
         @endif
     </div>
     @if(count($searchResults) == 0)
-        <div class="mt-10 text-center {{ $textColor != null ? 'text-' . $textColor : '' }}">
+        <div class="mt-10 text-center text-sm sm:text-base {{ $textColor != null ? 'text-' . $textColor : '' }}">
             {{ $searchBarText ?? 'Most Recent Searches: Your Top Content Ideas, etc' }}
         </div>
     @endif

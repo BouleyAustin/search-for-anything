@@ -10,14 +10,14 @@
                 </div>
                 <div class="flex flex-wrap gap-3">
                     @foreach($callToActions as $action)
-                        <div class="w-1/5 border rounded-md p-3 hover:bg-gray-50">
+                        <div class="w-1/3 md:w-1/5 border rounded-md p-3 hover:bg-gray-50">
                             <div class="h-42 w-42">
                                 <img src="https://referralrock.com/blog/wp-content/uploads/2019/06/referral-call-to-action.jpg"/>
                             </div>
                             <div class="mt-2 text-center">
                                 <p>{{ substr($action['name'], 0, 40) }}</p>
                             </div>
-                            <div class="mt-2 flex justify-center items-center gap-2">
+                            <div class="mt-2 flex flex-col md:flex-row justify-center items-center gap-2">
                                 <x-jet-secondary-button wire:click="openEdit({{ $action['id'] }})">
                                     Edit
                                 </x-jet-secondary-button>

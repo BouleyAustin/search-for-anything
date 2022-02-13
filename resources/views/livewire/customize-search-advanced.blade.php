@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 @endif
-                <div class="mt-5 grid grid-cols-3">
+                <div class="mt-5 grid sm:grid-cols-3">
                     <div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Search Page URL:</label>
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-10 mb-3 flex flex-row gap-5 justify-left items-center">
+                <div class="mt-10 mb-3 flex flex-col sm:flex-row gap-5 justify-left items-center">
                     <div>
                         <div class="flex flex-col gap-3">
                             <p class="text-sm w-3/4">Add Tracking Code To The Search Page (Facebook Pixel, Google Analytics, etc)</p>

@@ -22,8 +22,8 @@
                         </div>
                     </div>
                 @endif
-                <div class="mt-5 flex justify-between items-center space-x-3">
-                    <div>
+                <div class="mt-5 sm:flex sm:justify-between sm:items-center sm:space-x-3">
+                    <div class="hidden sm:block">
                         <div>
                             <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                                 <label class="text-sm sm:text-md font-medium">Search Title:</label>
@@ -81,7 +81,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="w-3/5 border border-gray-200 rounded-lg" style="{{ $pageDetails['background_color'] != null ? 'background-color: ' . $pageDetails['background_color'] : '' }}">
+                    <div class="w-full sm:w-3/5 border border-gray-200 rounded-lg" style="{{ $pageDetails['background_color'] != null ? 'background-color: ' . $pageDetails['background_color'] : '' }}">
                         <div class="p-5">
                             <div class="mb-5 font-sans text-gray-900 antialiased">
                                 <div class="mt-10">
@@ -106,6 +106,64 @@
                                     {{ $pageDetails['search_bar_text'] ?? 'Most Recent Searches: Your Top Content Ideas, etc' }}
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="block sm:hidden">
+                        <div class="mt-5">
+                            <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                <label class="text-sm sm:text-md font-medium">Search Title:</label>
+                                <div class="pl-3">
+                                    <input wire:model="pageDetails.search_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
+                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                </div>
+                            </div>
+                            <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                <label class="text-sm sm:text-md font-medium">Sub Search Title:</label>
+                                <div class="pl-3">
+                                    <input wire:model="pageDetails.sub_search_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
+                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                </div>
+                            </div>
+                            <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                <label class="text-sm sm:text-md font-medium">Search Bar Input Text:</label>
+                                <div class="pl-3">
+                                    <input wire:model="pageDetails.search_bar_input" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
+                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                </div>
+                            </div>
+                            <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                <label class="text-sm sm:text-md font-medium">Text Below Search Bar:</label>
+                                <div class="pl-3">
+                                    <input wire:model="pageDetails.search_bar_text" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
+                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                </div>
+                            </div>
+                            <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                <label class="block text-sm font-medium text-gray-700">Text Color:</label>
+                                <div class="pl-3">
+                                    <select wire:model="pageDetails.text_color" class="mt-1 block w-52 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 hover:border-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                        <option value="black">Black</option>
+                                        <option value="white">White</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                <label class="text-sm sm:text-md font-medium">Background Color:</label>
+                                <div class="pl-3">
+                                    <input wire:model="pageDetails.background_color" type="color" class="border shadow-sm block w-10 sm:text-sm border-gray-300 rounded-md">
+                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <x-jet-secondary-button wire:click="save">
+                                Save
+                            </x-jet-secondary-button>
+                            <a href="/{{ $pageDetails['url_ending'] }}" target="_blank">
+                                <x-jet-secondary-button>
+                                    See Live Page
+                                </x-jet-secondary-button>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 m-2 sm:m-0">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-            <div class="flex gap-5 justify-center items-center">
+            <div class="sm:flex sm:gap-5 space-y-2 sm:space-y-0 sm:justify-center sm:items-center">
                 <div class="grow border rounded-md p-5 bg-white shadow-lg hover:bg-gray-50 text-center">
                     <div class="mb-4">
                         <span class="inline-flex items-center justify-center p-3 bg-green-50 rounded-md">
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <div class="pb-36">
+    <div class="pb-36 m-2 sm:m-0">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="p-3">

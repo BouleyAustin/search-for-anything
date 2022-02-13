@@ -5,11 +5,11 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 m-2 sm:m-0">
         <livewire:customize-search-page/>
     </div>
 
-    <div class="pb-36">
+    <div class="pb-36 m-2 sm:m-0">
         <livewire:customize-search-advanced/>
     </div>
 </x-app-layout>

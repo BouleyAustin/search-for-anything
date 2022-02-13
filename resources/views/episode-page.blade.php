@@ -29,16 +29,16 @@
         @endif
     </head>
     <main class="flex-grow">
-        <div class="mt-12">
+        <div class="mt-12 m-2 sm:m-0">
             <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
                     <div class="p-5">
-                        <p class="mt-5 text-center text-3xl text-black">{{ $content['title'] }}</p>
+                        <p class="mt-5 text-center text-2xl sm:text-3xl text-black">{{ $content['title'] }}</p>
                         <div class="mt-10 flex justify-center">
                             <iframe src="https://anchor.fm/theimpeccableinvestor/embed/episodes/When-Swing-Trading-Is-Your-Only-Option-e18m3lv" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
                         </div>
                         <div class="mt-10 text-center text-black">
-                            <p class="text-xl">In This Episode, you'll learn:</p>
+                            <p class="text-lg sm:text-xl">In This Episode, you'll learn:</p>
                             <div class="text-md mt-5">
                                 <p class="mt-3">How To Swing Trade Stocks</p>
                                 <p class="mt-3">Swing Trading Strategies</p>
@@ -62,7 +62,7 @@
             @if($pageDetails['collect_email'])
                 <div class="mt-10 text-center text-black">
                     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
                             <div class="p-5">
                                 <div class="mt sm:flex">
                                     <label for="email" class="sr-only">Email</label>
@@ -78,9 +78,9 @@
             @if($content['show_cta'])
                 <div class="mt-10 text-center text-black">
                     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
                             <div class="p-6">
-                                <div class="flex flex-row gap-3 justify-center items-center">
+                                <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
                                     <div>
                                         <img class="w-96 h-full" src="{{ $callToAction['image_url'] }}"/>
                                     </div>
@@ -104,7 +104,7 @@
 
             <div class="mt-10 text-center pb-36 text-black">
                 <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                    <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
                         <div class="p-5">
                             <p class="mt-5 text-xl">Transcript:</p>
                             <div class="mt-5 mb-5 max-w-5xl text-md text-center mx-auto sm:px-6 lg:px-8">

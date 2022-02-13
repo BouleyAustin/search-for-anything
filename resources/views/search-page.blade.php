@@ -33,13 +33,15 @@
             <div class="mt-52">
                 <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
                     <div class="text-center">
-                        <p class="font-sans font-black text-3xl {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['search_title'] ?? 'The ' . $pageDetails['name'] . ' Search Engine' }}</p>
+                        <p class="font-sans font-black text-2xl sm:text-3xl {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['search_title'] ?? 'The ' . $pageDetails['name'] . ' Search Engine' }}</p>
                         <p class="pt-4 text-sm {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['sub_search_title'] ?? 'Search For Anything I Have Ever Said!' }}</p>
                     </div>
                 </div>
             </div>
-            <div class="mt-8">
-                <livewire:search-bar :textColor="$pageDetails['text_color']" :searchBarInput="$pageDetails['search_bar_input']" :searchBarText="$pageDetails['search_bar_text']" :pageId="$pageDetails['id']"/>
+            <div class="m-2 sm:m-0">
+                <div class="mt-8">
+                    <livewire:search-bar :textColor="$pageDetails['text_color']" :searchBarInput="$pageDetails['search_bar_input']" :searchBarText="$pageDetails['search_bar_text']" :pageId="$pageDetails['id']"/>
+                </div>
             </div>
         </div>
     </main>
