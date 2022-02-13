@@ -18,7 +18,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <main class="flex-grow">
-        <div class="mt-24">
+        <div class="mt-12">
             <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
                 <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-5">
@@ -48,19 +48,48 @@
                 </div>
             </div>
 
-            <div class="mt-10 text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
-                <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                    <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
-                        <div class="p-5">
-                            <div class="mt sm:flex">
-                                <label for="email" class="sr-only">Email</label>
-                                <input wire:model="email" type="email" name="email" id="email" class="block w-full py-3 text-base rounded-md placeholder-gray-500 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:flex-1 border-gray-300" placeholder="Enter your email to know when the next episode drops!">
-                                <button wire:click="addEmail" class="mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">Get Notified!</button>
+            @if($pageDetails['collect_email'])
+                <div class="mt-10 text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+                        <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
+                            <div class="p-5">
+                                <div class="mt sm:flex">
+                                    <label for="email" class="sr-only">Email</label>
+                                    <input wire:model="email" type="email" name="email" id="email" class="block w-full py-3 text-base rounded-md placeholder-gray-500 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:flex-1 border-gray-300" placeholder="Enter your email to know when the next episode drops!">
+                                    <button wire:click="addEmail" class="mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">Get Notified!</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
+
+            @if($content['show_cta'])
+                <div class="mt-10 text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+                        <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
+                            <div class="p-6">
+                                <div class="flex flex-row gap-3 justify-center items-center">
+                                    <div>
+                                        <img class="w-96 h-full" src="{{ $callToAction['image_url'] }}"/>
+                                    </div>
+                                    <div class="max-w-md">
+                                        <p class="text-2xl font-bold">{{ $callToAction['title'] }}</p>
+                                        <p class="mt-2">{{ $callToAction['sub_title'] }}</p>
+                                        <div class="mt-5">
+                                            <a href="{{ $callToAction['button_url'] }}" target="_blank">
+                                                <x-jet-secondary-button>
+                                                    {{ $callToAction['button_text'] }}
+                                                </x-jet-secondary-button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
 
             <div class="mt-10 text-center pb-36 {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
                 <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">

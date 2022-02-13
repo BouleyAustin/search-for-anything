@@ -15,7 +15,7 @@ i<x-app-layout>
                     </div>
                     <div class="flex flex-wrap gap-3">
                         @foreach($contents as $content)
-                            <div class="max-w-min border rounded-md p-3 hover:bg-gray-50">
+                            <div class="w-1/5 border rounded-md p-3 hover:bg-gray-50">
                                 <div class="h-42 w-42">
                                     <img src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg"/>
                                 </div>
@@ -34,5 +34,9 @@ i<x-app-layout>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="pb-36">
+        <livewire:call-to-action/>
     </div>
 </x-app-layout>

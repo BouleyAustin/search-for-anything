@@ -59,14 +59,16 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-jet-secondary-button wire:click="close" wire:loading.attr="disabled">
-                {{ __('Close') }}
-            </x-jet-secondary-button>
-            <x-jet-secondary-button class="ml-2" wire:click="save" wire:loading.attr="disabled">
-                {{ __('Add Content') }}
-            </x-jet-secondary-button>
-            <div wire:loading wire:target="save">
-                Loading...
+            <div class="flex gap-1 items-center">
+                <x-jet-secondary-button wire:click="close" wire:loading.attr="disabled">
+                    {{ __('Close') }}
+                </x-jet-secondary-button>
+                <x-jet-secondary-button class="ml-2" wire:click="save" wire:loading.attr="disabled">
+                    {{ __('Add Content') }}
+                </x-jet-secondary-button>
+                <div wire:loading wire:target="save">
+                    Loading...
+                </div>
             </div>
         </x-slot>
     </x-jet-dialog-modal>

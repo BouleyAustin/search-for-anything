@@ -63,6 +63,9 @@
                         <div class="pl-3">
                             <select wire:model="content.cta_id" class="mt-1 block w-48 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 hover:border-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                                 <option value="">Select</option>
+                                @foreach($callToActions as $cta)
+                                    <option value="{{ $cta['id'] }}">{{ $cta['name'] }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -96,14 +99,16 @@
         </x-slot>
 
         <x-slot name="footer">
-            <x-jet-secondary-button wire:click="close" wire:loading.attr="disabled">
-                {{ __('Close') }}
-            </x-jet-secondary-button>
-            <x-jet-secondary-button class="ml-2" wire:click="save" wire:loading.attr="disabled">
-                {{ __('Save Content') }}
-            </x-jet-secondary-button>
-            <div wire:loading wire:target="save">
-                Loading...
+            <div class="flex gap-1 items-center">
+                <x-jet-secondary-button wire:click="close" wire:loading.attr="disabled">
+                    {{ __('Close') }}
+                </x-jet-secondary-button>
+                <x-jet-secondary-button class="ml-2" wire:click="save" wire:loading.attr="disabled">
+                    {{ __('Save Content') }}
+                </x-jet-secondary-button>
+                <div wire:loading wire:target="save">
+                    Loading...
+                </div>
             </div>
         </x-slot>
     </x-jet-dialog-modal>

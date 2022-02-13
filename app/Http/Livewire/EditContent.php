@@ -15,6 +15,7 @@ class EditContent extends Component
     public $isViewing = false;
     public $content = [];
     public $transcript = [];
+    public $callToActions = [];
 
     protected $rules = [
         'content.title' => 'required|string',
@@ -27,6 +28,7 @@ class EditContent extends Component
     {
         $this->content = Content::where('id', $this->contentId)->first()->toArray();
         $this->transcript = Transcription::where('content_id', $this->contentId)->get()->toArray();
+        $this->callToActions = Auth::user()->pages()->first()->callToAction()->get()->toArray();
     }
 
     public function close()

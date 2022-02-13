@@ -18,4 +18,9 @@ class Page extends Model
     {
         return $this->hasMany(Content::class);
     }
+
+    public function callToAction()
+    {
+        return $this->hasMany(CallToAction::class);
+    }
 }

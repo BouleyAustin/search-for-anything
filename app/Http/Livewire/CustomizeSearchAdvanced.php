@@ -32,6 +32,9 @@ class CustomizeSearchAdvanced extends Component
         $update->link_url = $this->pageDetails['link_url'];
         $update->podcast_rss = $this->pageDetails['podcast_rss'];
         $update->automatic_transcription = $this->pageDetails['automatic_transcription'];
+        $update->collect_email = $this->pageDetails['collect_email'];
+        $update->email_provider = $this->pageDetails['email_provider'];
+        $update->email_api_key = $this->pageDetails['email_api_key'];
         $update->save();
 
         Session()->flash('success', 'Your search page has been updated!');
