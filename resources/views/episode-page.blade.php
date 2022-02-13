@@ -4,7 +4,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Impeccable Search Engine</title>
+        <title>{{ $pageDetails['meta_title'] ?? 'SearchForAnything.io' }}</title>
+        <meta name="keywords" content="{{ $pageDetails['meta_keywords'] ?? 'podcast automation, podcast search engine, podcast seo, podcast seo automation, podcast growth, podcast seo software, podcast software' }}">
+        <meta name="description" content="{{ $pageDetails['meta_description'] ?? 'Turn your podcast into your biggest marketing asset in seconds! SearchForAnything.io increases your SEO presence, downloads, and conversion rates automatically!' }}">
+        <meta name="robots" content="{{ $pageDetails['meta_robots'] ?? 'index, follow' }}" />
+
+        <link rel="icon" href="{{ $pageDetails['favicon_url'] ?? '\logo.png' }}" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
