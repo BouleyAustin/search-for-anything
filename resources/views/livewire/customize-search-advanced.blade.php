@@ -28,42 +28,42 @@
                             <label class="text-sm sm:text-md font-medium">Search Page URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.url_ending" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.url_ending') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Meta Title:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.meta_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.meta_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Meta Description:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.meta_description" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.meta_description') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Meta Keywords:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.meta_keywords" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.meta_keywords') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Meta Robots:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.meta_robots" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.meta_robots') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Favicon Image:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.favicon_url" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.favicon_url') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>
@@ -72,49 +72,49 @@
                             <label class="text-sm sm:text-md font-medium">Instagram URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.link_instagram" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.link_instagram') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">TikTok URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.link_tiktok" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.link_tiktok') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">YouTube URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.link_youtube" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.link_youtube') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Twitter URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.link_twitter" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.link_twitter') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Facebook URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.link_facebook" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.link_facebook') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">LinkedIn URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.link_linkedin" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.link_linkedin') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Custom URL:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.link_custom" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.link_custom') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                             <label class="text-sm sm:text-md font-medium">Podcast RSS Feed:</label>
                             <div class="pl-3">
                                 <input wire:model="pageDetails.podcast_rss" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                @error('pageDetails.podcast_rss') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">

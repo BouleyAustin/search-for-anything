@@ -1,4 +1,4 @@
-<x-app-layout>
+i<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Content') }}
@@ -23,9 +23,7 @@
                                     <p>{{ substr($content['title'], 0, 35) }}</p>
                                 </div>
                                 <div class="mt-2 flex justify-center items-center gap-2">
-                                    <x-jet-secondary-button>
-                                        Edit
-                                    </x-jet-secondary-button>
+                                    <livewire:edit-content :contentId="$content['id']"/>
                                     <x-jet-secondary-button>
                                         Export
                                     </x-jet-secondary-button>

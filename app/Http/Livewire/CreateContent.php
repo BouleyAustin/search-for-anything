@@ -19,7 +19,8 @@ class CreateContent extends Component
     protected $rules = [
         'content.name' => 'required|string',
         'content.type' => 'required',
-        'content.file' => 'required|mimes:txt'
+        'content.file' => 'required|mimes:txt',
+        'content.podcast_link' => 'required|url',
     ];
 
     public function mount()
@@ -28,6 +29,8 @@ class CreateContent extends Component
             'name' => null,
             'type' => null,
             'file' => null,
+            'podcast_link' => null,
+            'video_link' => null,
         ];
     }
 
@@ -43,6 +46,8 @@ class CreateContent extends Component
         $newContent = new Content();
         $newContent->title = $this->content['name'];
         $newContent->platform = $this->content['type'];
+        $newContent->podcast_link = $this->content['podcast_link'];
+        $newContent->video_link = $this->content['video_link'];
         Auth::user()->pages()->first()->contents()->save($newContent);
 
         $this->content['file']->store('temp_transcripts');
