@@ -29,7 +29,7 @@
         @endif
     </head>
     <main class="flex-grow">
-        <div class="mt-12 m-2 sm:m-0">
+        <div class="pt-12 m-2 sm:m-0">
             <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
                     <div class="p-5">

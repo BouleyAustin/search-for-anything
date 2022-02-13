@@ -5,17 +5,20 @@ namespace App\Services;
 
 
 use App\Models\Content;
+use App\Models\Page;
 use App\Models\Transcription;
 
 class SearchService
 {
     public static function getSearchResults($pageId, $search)
     {
+        $pageUrl = Page::where('id', $pageId)->first()->url_ending;
+
         $result = [];
         $searchResults = Transcription::where('page_id', $pageId)
             ->where('starts_at', '!=', NULL)
             ->where('sentence', 'LIKE', "%$search%")
-            ->take(5)
+            ->take(9)
             ->get()
             ->toArray();
 
@@ -23,8 +26,8 @@ class SearchService
             if($content = Content::where('id', $item['content_id'])->first()){
                 $temp = [
                     'title' => $content->title,
-                    'sentence' => $item['sentence'],
-                    'link' => $item['episode_link'],
+                    'sentence' => substr($item['sentence'], strpos($item['sentence'],  ' '),80),
+                    'link' => '/' . $pageUrl . '/' . $content->url_ending,
                     'starts_at' => $item['starts_at'],
                 ];
             array_push($result, $temp);

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Services\SearchService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Livewire\Component;
 
 class SearchBar extends Component
@@ -14,21 +15,26 @@ class SearchBar extends Component
     public $searchBarInput;
     public $textColor;
     public $pageId;
+    public $searched = false;
 
-    public function updatedSearch()
+    public function search()
     {
         if($this->search == NULL || $this->search == ' '){
-            $this->search = NULL;
-            $this->searchResults = [];
+            $this->clear();
         }
         else{
             $this->searchResults = SearchService::getSearchResults($this->pageId, $this->search);
+
+            if(count($this->searchResults) == 0){
+                session()->flash('error', 'Sorry, it appears we could not find anything matching that search term. Here are some of our top search terms to help you out!');
+            }
         }
     }
 
-    public function redirectToPodcast($link, $startsAt)
+    public function clear()
     {
-        return redirect()->away($link);
+        $this->search = NULL;
+        $this->searchResults = [];
     }
 
     public function render()
