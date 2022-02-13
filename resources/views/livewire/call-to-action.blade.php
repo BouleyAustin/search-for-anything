@@ -44,42 +44,42 @@
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                     <label class="text-sm sm:text-md font-medium">CTA Reference Name (your use only):</label>
                     <div class="pl-3">
-                        <input wire:model="callToAction.name" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
+                        <input wire:model="callToAction.name" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('callToAction.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                     <label class="text-sm sm:text-md font-medium">CTA Title:</label>
                     <div class="pl-3">
-                        <input wire:model="callToAction.title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
+                        <input wire:model="callToAction.title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('callToAction.title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                     <label class="text-sm sm:text-md font-medium">CTA Sub Title:</label>
                     <div class="pl-3">
-                        <input wire:model="callToAction.sub_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
+                        <input wire:model="callToAction.sub_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                     <label class="text-sm sm:text-md font-medium">CTA Button Text:</label>
                     <div class="pl-3">
-                        <input wire:model="callToAction.button_text" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
+                        <input wire:model="callToAction.button_text" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                     <label class="text-sm sm:text-md font-medium">CTA Button URL:</label>
                     <div class="pl-3">
-                        <input wire:model="callToAction.button_url" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
+                        <input wire:model="callToAction.button_url" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
                     <label class="text-sm sm:text-md font-medium">Upload CTA Image:</label>
                     <div class="pl-3">
-                        <input wire:model="callToAction.file" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
+                        <input wire:model="callToAction.file" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('callToAction.file') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
@@ -105,7 +105,7 @@
 
     <x-jet-dialog-modal wire:model="isEditing">
         <x-slot name="title">
-            Add Content Manually
+            Edit Call To Action
         </x-slot>
 
         <x-slot name="content">
@@ -113,43 +113,45 @@
             <div class="mt-10 mb-3">
 
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">Content Name:</label>
+                    <label class="text-sm sm:text-md font-medium">CTA Reference Name (your use only):</label>
                     <div class="pl-3">
-                        <input wire:model="content.name" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
-                        @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        <input wire:model="callToAction.name" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('callToAction.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">Podcast Link:</label>
+                    <label class="text-sm sm:text-md font-medium">CTA Title:</label>
                     <div class="pl-3">
-                        <input wire:model="content.podcast_link" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
-                        @error('content.podcast_link') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        <input wire:model="callToAction.title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('callToAction.title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">Video Link (optional):</label>
+                    <label class="text-sm sm:text-md font-medium">CTA Sub Title:</label>
                     <div class="pl-3">
-                        <input wire:model="content.video_link" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
-                        @error('content.video_link') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        <input wire:model="callToAction.sub_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="block text-sm font-medium text-gray-700">Content Type:</label>
+                    <label class="text-sm sm:text-md font-medium">CTA Button Text:</label>
                     <div class="pl-3">
-                        <select wire:model="content.type" class="mt-1 block w-48 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 hover:border-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
-                            <option value="">Select</option>
-                            <option value="podcast">Podcast Episode</option>
-                            <option value="youtube">YouTube Video</option>
-                            <option value="blog">Blog Post</option>
-                        </select>
+                        <input wire:model="callToAction.button_text" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
-                @error('content.type') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                    <label class="text-sm sm:text-md font-medium">CTA Button URL:</label>
+                    <div class="pl-3">
+                        <input wire:model="callToAction.button_url" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    </div>
+                </div>
                 <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">Upload Transcript (txt):</label>
+                    <label class="text-sm sm:text-md font-medium">Upload CTA Image:</label>
                     <div class="pl-3">
-                        <input wire:model="content.file" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-48 sm:text-sm border-gray-300 rounded-md">
-                        @error('content.file') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        <input wire:model="callToAction.file" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('callToAction.file') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
@@ -162,10 +164,10 @@
                 <x-jet-secondary-button wire:click="close" wire:loading.attr="disabled">
                     {{ __('Close') }}
                 </x-jet-secondary-button>
-                <x-jet-secondary-button class="ml-2" wire:click="save" wire:loading.attr="disabled">
-                    {{ __('Add Content') }}
+                <x-jet-secondary-button class="ml-2" wire:click="saveEditing" wire:loading.attr="disabled">
+                    {{ __('Edit Call To Action') }}
                 </x-jet-secondary-button>
-                <div wire:loading wire:target="save">
+                <div wire:loading wire:target="saveEditing">
                     Loading...
                 </div>
             </div>

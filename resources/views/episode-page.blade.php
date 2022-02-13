@@ -25,13 +25,13 @@
     <main class="flex-grow">
         <div class="mt-12">
             <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <div class="p-5">
-                        <p class="mt-5 text-center text-3xl {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $content['title'] }}</p>
+                        <p class="mt-5 text-center text-3xl text-black">{{ $content['title'] }}</p>
                         <div class="mt-10 flex justify-center">
                             <iframe src="https://anchor.fm/theimpeccableinvestor/embed/episodes/When-Swing-Trading-Is-Your-Only-Option-e18m3lv" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
                         </div>
-                        <div class="mt-10 text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                        <div class="mt-10 text-center text-black">
                             <p class="text-xl">In This Episode, you'll learn:</p>
                             <div class="text-md mt-5">
                                 <p class="mt-3">How To Swing Trade Stocks</p>
@@ -39,7 +39,7 @@
                                 <p class="mt-3">The Best Stocks For Swing Trading</p>
                             </div>
                         </div>
-                        <div class="mt-12 mb-5 text-sm text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                        <div class="mt-12 mb-5 text-sm text-center text-black">
                             <p>Listen on other platforms</p>
                             <div class="mt-5 flex justify-center items-center gap-3">
                                 <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts@2x.png 2x" alt="Apple Podcasts Logo" height="36" width="36">
@@ -54,9 +54,9 @@
             </div>
 
             @if($pageDetails['collect_email'])
-                <div class="mt-10 text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                <div class="mt-10 text-center text-black">
                     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                        <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                             <div class="p-5">
                                 <div class="mt sm:flex">
                                     <label for="email" class="sr-only">Email</label>
@@ -70,9 +70,9 @@
             @endif
 
             @if($content['show_cta'])
-                <div class="mt-10 text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                <div class="mt-10 text-center text-black">
                     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                        <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
+                        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                             <div class="p-6">
                                 <div class="flex flex-row gap-3 justify-center items-center">
                                     <div>
@@ -96,9 +96,9 @@
                 </div>
             @endif
 
-            <div class="mt-10 text-center pb-36 {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+            <div class="mt-10 text-center pb-36 text-black">
                 <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                    <div class="{{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'bg-white' : 'bg-black') : 'bg-white' }} overflow-hidden shadow-xl sm:rounded-lg">
+                    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                         <div class="p-5">
                             <p class="mt-5 text-xl">Transcript:</p>
                             <div class="mt-5 mb-5 max-w-5xl text-md text-center mx-auto sm:px-6 lg:px-8">
@@ -113,7 +113,7 @@
         </div>
     </main>
     <footer class="mb-10">
-        <div class="text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+        <div class="text-center {{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'text-black' : 'text-white') : '' }}">
             <div class="mb-5">
                 <p>Want Your Own Search Engine? Click Here!</p>
             </div>

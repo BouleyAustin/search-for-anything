@@ -56,6 +56,22 @@ class CallToAction extends Component
     public function openEdit($ctaId)
     {
         $this->isEditing = true;
+        $this->callToAction = \App\Models\CallToAction::where('id', $ctaId)->first()->toArray();
+    }
+
+    public function saveEditing()
+    {
+        $this->validate();
+
+        $updateCTA = \App\Models\CallToAction::where('id', $this->callToAction['id'])->first();
+        $updateCTA->name = $this->callToAction['name'];
+        $updateCTA->title = $this->callToAction['title'];
+        $updateCTA->sub_title = $this->callToAction['sub_title'];
+        $updateCTA->button_text = $this->callToAction['button_text'];
+        $updateCTA->button_url = $this->callToAction['button_url'];
+        $updateCTA->save();
+
+        $this->mount();
     }
 
     public function deleteCTA($ctaId)
