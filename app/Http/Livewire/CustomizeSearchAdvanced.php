@@ -39,7 +39,7 @@ class CustomizeSearchAdvanced extends Component
         $update->email_api_key = $this->pageDetails['email_api_key'];
         $update->save();
 
-        Session()->flash('success', 'Your search page has been updated!');
+        return redirect(route('custom'));
     }
 
     public function render()

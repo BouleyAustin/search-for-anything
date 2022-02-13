@@ -31,6 +31,10 @@ Route::get('/home', function () {
     return view('landing');
 })->name('home');
 
-Route::get('/{name}', '\App\Http\Controllers\HomeController@showSearchPage')->name('search-page');
+Route::get('/{name}', '\App\Http\Controllers\HomeController@showSearchPage')
+    ->middleware(['pageview'])
+    ->name('search-page');
 
-Route::get('/{name}/{episodeName}', '\App\Http\Controllers\HomeController@showEpisodePage')->name('episode-page');
+Route::get('/{name}/{episodeName}', '\App\Http\Controllers\HomeController@showEpisodePage')
+    ->middleware(['pageview'])
+    ->name('episode-page');

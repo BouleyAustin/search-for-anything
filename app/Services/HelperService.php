@@ -6,6 +6,8 @@ namespace App\Services;
 
 use App\Models\CallToAction;
 use App\Models\Content;
+use App\Models\Page;
+use App\Models\PageViews;
 use App\Models\Transcription;
 
 class HelperService
@@ -36,5 +38,48 @@ class HelperService
         $callToAction->click_through_rate = round($callToAction->total_clicks / $pageViews, 4) * 100;
         $callToAction->save();
 
+    }
+
+    public static function recordPageViews($request)
+    {
+        $newPageView = new PageViews();
+        $newPageView->url = $request->url();
+        $newPageView->ip = $request->getClientIp();
+        $newPageView->referring_url = $request->server('HTTP_REFERER');
+        $newPageView->agent = $request->header('user-agent');
+
+        try{
+            $path = substr($request->getPathInfo(), 1);
+
+            if(str_contains($path, '/')){
+                $pagePath = substr($path, 0, strpos($path, '/'));
+                $newPath = substr($path, strpos($path, '/'));
+
+                if($page = Page::where('url_ending', $pagePath)->first()){
+                    $newPageView->page_id = $page->id;
+                }
+
+                if(str_contains($newPath, '/')){
+                    $episodePath = substr($newPath, strpos($newPath, '/') + 1);
+
+                    if($content = Content::where('url_ending', $episodePath)->first()){
+                        $newPageView->content_id = $content->id;
+
+                        if($content->show_cta && $content->cta_id != null){
+                            if($callToAction = CallToAction::where('id', $content->cta_id)->first()){
+                                $callToAction->total_views = $callToAction->total_views + 1;
+                                $pageViews = $callToAction->total_views == 0 ? 1 : $callToAction->total_views;
+                                $callToAction->click_through_rate = round($callToAction->total_clicks / $pageViews, 4) * 100;
+                                $callToAction->save();
+                            }
+                        }
+                    }
+                }
+            }
+        } catch(\Exception $exception){
+            \Log::info('record page view failed: ' . $exception);
+        }
+
+        $newPageView->save();
     }
 }
