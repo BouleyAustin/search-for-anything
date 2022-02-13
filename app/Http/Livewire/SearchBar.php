@@ -25,6 +25,8 @@ class SearchBar extends Component
         else{
             $this->searchResults = SearchService::getSearchResults($this->pageId, $this->search);
 
+            SearchService::recordSearchHistory($this->pageId, $this->search);
+
             if(count($this->searchResults) == 0){
                 session()->flash('error', 'Sorry, it appears we could not find anything matching that search term. Here are some of our top search terms to help you out!');
             }

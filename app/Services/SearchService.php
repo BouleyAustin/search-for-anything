@@ -6,6 +6,7 @@ namespace App\Services;
 
 use App\Models\Content;
 use App\Models\Page;
+use App\Models\SearchHistory;
 use App\Models\Transcription;
 
 class SearchService
@@ -29,11 +30,21 @@ class SearchService
                     'sentence' => substr($item['sentence'], strpos($item['sentence'],  ' '),80),
                     'link' => '/' . $pageUrl . '/' . $content->url_ending,
                     'starts_at' => $item['starts_at'],
+                    'content_id' => $content->id,
                 ];
             array_push($result, $temp);
             }
         }
 
         return $result;
+    }
+
+    public static function recordSearchHistory($pageId, $searchTerm)
+    {
+        $newSearchHistory = new SearchHistory();
+        $newSearchHistory->search_term = $searchTerm;
+
+        $page = Page::where('id', $pageId)->first();
+        $page->searchHistories()->save($newSearchHistory);
     }
 }

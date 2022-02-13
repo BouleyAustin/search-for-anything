@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class SearchHistory extends Model
 {
     use HasFactory;
+
+    public function pages()
+    {
+        return $this->belongsTo(Page::class);
+    }
 }

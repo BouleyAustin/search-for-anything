@@ -23,4 +23,9 @@ class Page extends Model
     {
         return $this->hasMany(CallToAction::class);
     }
+
+    public function searchHistories()
+    {
+        return $this->hasMany(SearchHistory::class);
+    }
 }
