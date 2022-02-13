@@ -44,9 +44,12 @@ class CreatePagesTable extends Migration
             $table->string('meta_robots')->nullable();
             $table->string('meta_keywords')->nullable();
             $table->string('favicon_url')->nullable();
+            $table->longText('tracking_code_search')->nullable();
+            $table->longText('tracking_code_episode')->nullable();
             $table->boolean('collect_email')->default(false);
             $table->string('email_provider')->nullable();
             $table->string('email_api_key')->nullable();
+            $table->string('email_api_tag')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

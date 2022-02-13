@@ -21,6 +21,12 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+
+        @if($pageDetails['tracking_code_episode'] != NULL)
+            <script>
+                {{ $pageDetails['tracking_code_episode'] }}
+            </script>
+        @endif
     </head>
     <main class="flex-grow">
         <div class="mt-12">

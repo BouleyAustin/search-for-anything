@@ -170,6 +170,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="mt-10 mb-3 flex flex-row gap-5 justify-left items-center">
+                    <div>
+                        <div class="flex flex-col gap-3">
+                            <p class="text-sm w-3/4">Add Tracking Code To The Search Page (Facebook Pixel, Google Analytics, etc)</p>
+                            <textarea wire:model="pageDetails.tracking_code_search" class="w-96 rounded border border-gray-300 mt-2" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-col gap-3">
+                            <p class="text-sm w-3/4">Add Tracking Code To The Episode Pages (Facebook Pixel, Google Analytics, etc)</p>
+                            <textarea wire:model="pageDetails.tracking_code_episode" class="w-96 rounded border border-gray-300 mt-2" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
                 <div class="mt-5">
                     <x-jet-secondary-button wire:click="save">
                         Save Settings
