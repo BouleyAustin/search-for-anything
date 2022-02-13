@@ -38,18 +38,10 @@ class HomeController extends Controller
                 $content = $content->toArray();
                 $transcript = Transcription::where('content_id', $content['id'])->get()->toArray();
 
-                if($content['show_cta']){
-                    $callToAction = CallToAction::where('id', $content['cta_id'])->first()->toArray();
-                }
-                else{
-                    $callToAction = null;
-                }
-
                 return view('episode-page', [
                     'pageDetails' => $pageDetails,
                     'content' => $content,
                     'transcript' => $transcript,
-                    'callToAction' => $callToAction,
                 ]);
             }
             else{

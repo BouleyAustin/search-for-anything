@@ -77,28 +77,7 @@
 
             @if($content['show_cta'])
                 <div class="mt-10 text-center text-black">
-                    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                        <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
-                            <div class="p-6">
-                                <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                                    <div>
-                                        <img class="w-96 h-full" src="{{ $callToAction['image_url'] }}"/>
-                                    </div>
-                                    <div class="max-w-md">
-                                        <p class="text-2xl font-bold">{{ $callToAction['title'] }}</p>
-                                        <p class="mt-2">{{ $callToAction['sub_title'] }}</p>
-                                        <div class="mt-5">
-                                            <a href="{{ $callToAction['button_url'] }}" target="_blank">
-                                                <x-jet-secondary-button>
-                                                    {{ $callToAction['button_text'] }}
-                                                </x-jet-secondary-button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <livewire:call-to-action-section :ctaId="$content['cta_id']" :contentId="$content['id']"/>
                 </div>
             @endif
 
