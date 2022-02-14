@@ -47,4 +47,15 @@ class SearchService
         $page = Page::where('id', $pageId)->first();
         $page->searchHistories()->save($newSearchHistory);
     }
+
+    public static function getEmbedLink($link)
+    {
+        if(str_contains($link, 'apple')){
+            $position = strpos($link, '//') + 2;
+            return substr($link, 0, $position) . 'embed.' . substr($link, $position);
+        }
+        elseif(str_contains($link, 'anchor')){
+            return 'test';
+        }
+    }
 }

@@ -7,6 +7,7 @@ use App\Models\Content;
 use App\Models\Page;
 use App\Models\Transcription;
 use App\Services\HelperService;
+use App\Services\SearchService;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -38,10 +39,13 @@ class HomeController extends Controller
                 $content = $content->toArray();
                 $transcript = Transcription::where('content_id', $content['id'])->get()->toArray();
 
+                $embedLink = SearchService::getEmbedLink($content['podcast_link']);
+
                 return view('episode-page', [
                     'pageDetails' => $pageDetails,
                     'content' => $content,
                     'transcript' => $transcript,
+                    'embedLink' => $embedLink,
                 ]);
             }
             else{
