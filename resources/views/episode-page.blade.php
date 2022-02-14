@@ -35,7 +35,7 @@
                     <div class="p-5">
                         <p class="mt-5 text-center text-2xl sm:text-3xl text-black">{{ $content['title'] }}</p>
                         <div class="mt-10 flex justify-center">
-                            <iframe src="https://anchor.fm/theimpeccableinvestor/embed/episodes/When-Swing-Trading-Is-Your-Only-Option-e18m3lv" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+                            <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/understanding-the-fear-and-greed-index/id1525402049?i=1000550666521"></iframe>
                         </div>
                         <div class="mt-10 text-center text-black">
                             <p class="text-lg sm:text-xl">In This Episode, you'll learn:</p>
@@ -61,17 +61,7 @@
 
             @if($pageDetails['collect_email'])
                 <div class="mt-10 text-center text-black">
-                    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                        <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
-                            <div class="p-5">
-                                <div class="mt sm:flex">
-                                    <label for="email" class="sr-only">Email</label>
-                                    <input wire:model="email" type="email" name="email" id="email" class="block w-full py-3 text-base rounded-md placeholder-gray-500 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:flex-1 border-gray-300" placeholder="Enter your email to know when the next episode drops!">
-                                    <button wire:click="addEmail" class="mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">Get Notified!</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <livewire:email-optin :pageDetails="$pageDetails"/>
                 </div>
             @endif
 
@@ -100,7 +90,7 @@
     <footer class="mb-10">
         <div class="text-center {{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'text-black' : 'text-white') : '' }}">
             <div class="mb-5">
-                <p>Want Your Own Search Engine? Click Here!</p>
+                <a href="{{ route('landing') }}"><p class="hover:underline">Want To Automate Your Own Podcast? Click Here!</p></a>
             </div>
             <div class="flex gap-4 justify-center items-center text-gray-400">
                 <div>

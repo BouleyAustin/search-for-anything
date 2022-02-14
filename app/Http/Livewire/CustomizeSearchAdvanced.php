@@ -8,10 +8,18 @@ use Livewire\Component;
 class CustomizeSearchAdvanced extends Component
 {
     public $pageDetails;
+    public $tags;
 
     public function mount()
     {
         $this->pageDetails = Auth::user()->pages()->first()->toArray();
+
+        if($this->pageDetails['email_api_key'] != null && $this->pageDetails['email_provider'] == 'convertkit'){
+            $this->tags = json_decode(file_get_contents("https://api.convertkit.com/v3/tags?api_key={$this->pageDetails['email_api_key']}"), true)['tags'];
+        }
+        else{
+            $this->tags = [];
+        }
     }
 
     public function save()
@@ -37,9 +45,17 @@ class CustomizeSearchAdvanced extends Component
         $update->collect_email = $this->pageDetails['collect_email'];
         $update->email_provider = $this->pageDetails['email_provider'];
         $update->email_api_key = $this->pageDetails['email_api_key'];
+        $update->email_api_tag = $this->pageDetails['email_api_tag'];
         $update->save();
 
         return redirect(route('custom'));
+    }
+
+    public function updatedPageDetails()
+    {
+        if($this->pageDetails['email_api_key'] != null && $this->pageDetails['email_provider'] == 'convertkit'){
+            $this->tags = json_decode(file_get_contents("https://api.convertkit.com/v3/tags?api_key={$this->pageDetails['email_api_key']}"), true)['tags'];
+        }
     }
 
     public function render()

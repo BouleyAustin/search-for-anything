@@ -48,7 +48,7 @@
     <footer class="mb-10">
         <div class="text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
             <div class="mb-5">
-                <p>Want Your Own Search Engine? Click Here!</p>
+                <a href="{{ route('landing') }}"><p class="hover:underline">Want Your Own Search Engine? Click Here!</p></a>
             </div>
             <div class="flex gap-4 justify-center items-center text-gray-400">
                 <div>

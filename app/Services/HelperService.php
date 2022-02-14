@@ -9,6 +9,7 @@ use App\Models\Content;
 use App\Models\Page;
 use App\Models\PageViews;
 use App\Models\Transcription;
+use Illuminate\Support\Facades\Http;
 
 class HelperService
 {
@@ -81,5 +82,17 @@ class HelperService
         }
 
         $newPageView->save();
+    }
+
+    public static function addEmailToPage($apiKey, $tag, $provider, $email)
+    {
+        if($provider == 'convertkit'){
+            Http::withHeaders([
+                'Content-Type' => 'application/json',
+            ])->post('https://api.convertkit.com/v3/tags/' . $tag .'/subscribe', [
+                'api_secret' => $apiKey,
+                'email' => $email,
+            ]);
+        }
     }
 }

@@ -24,6 +24,7 @@
                 @endif
                 <div class="mt-5 grid sm:grid-cols-3">
                     <div>
+                        <p class="mt-2 mb-5 font-semibold">SEO Settings</p>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Search Page URL:</label>
                             <div class="pl-3">
@@ -75,6 +76,7 @@
                         </div>
                     </div>
                     <div>
+                        <p class="mt-2 mb-5 font-semibold">Social Links</p>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Instagram URL:</label>
                             <div class="pl-3">
@@ -126,6 +128,7 @@
                         </div>
                     </div>
                     <div>
+                        <p class="mt-2 mb-5 font-semibold">Integration Settings</p>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Podcast RSS Feed:</label>
                             <div class="pl-3">
@@ -157,7 +160,6 @@
                                 <select wire:model="pageDetails.email_provider" class="mt-1 block w-52 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 hover:border-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                                     <option value="">Select</option>
                                     <option value="convertkit">Convertkit</option>
-                                    <option value="mailchimp">mailchimp</option>
                                 </select>
                             </div>
                         </div>
@@ -166,6 +168,17 @@
                             <div class="pl-3">
                                 <input wire:model="pageDetails.email_api_key" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
                                 @error('pageDetails.email_api_key') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                            </div>
+                        </div>
+                        <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                            <label class="block text-sm font-medium">Email Tag:</label>
+                            <div class="pl-3">
+                                <select wire:model="pageDetails.email_api_tag" class="mt-1 block w-52 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 hover:border-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+                                    <option value="">Select</option>
+                                    @foreach($tags as $tag)
+                                        <option value="{{ $tag['id'] }}">{{ $tag['name'] }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
