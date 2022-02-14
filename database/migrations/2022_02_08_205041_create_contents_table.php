@@ -29,6 +29,7 @@ class CreateContentsTable extends Migration
             $table->boolean('show_cta')->default(false);
             $table->unsignedBigInteger('cta_id')->nullable();
             $table->bigInteger('cta_clicks')->default(0);
+            $table->bigInteger('social_share_clicks')->default(0);
             $table->timestamps();
 
             $table->foreign('page_id')
