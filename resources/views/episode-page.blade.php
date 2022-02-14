@@ -44,9 +44,9 @@
                     <div>
                         <a href="{{ $shareButtons['reddit'] }}" target="_blank">
                             @if($pageDetails['text_color'] == 'white')
-                                <img width="20" height="20" src="https://cdn.freebiesupply.com/logos/large/2x/reddit-logo-black-and-white.png"/>
+                                <img width="20" height="20" src="\reddit-logo.png"/>
                             @else
-                                <img width="20" height="20" src="https://cdn3.iconfinder.com/data/icons/social-media-black-white-2/512/BW_Reddit_glyph_svg-512.png"/>
+                                <img width="20" height="20" src="\reddit-black.png"/>
                             @endif
                         </a>
                     </div>
