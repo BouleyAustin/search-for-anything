@@ -8,6 +8,7 @@ use App\Models\Content;
 use App\Models\Page;
 use App\Models\SearchHistory;
 use App\Models\Transcription;
+use Illuminate\Support\Facades\Auth;
 
 class SearchService
 {
