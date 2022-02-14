@@ -41,11 +41,19 @@ class HomeController extends Controller
 
                 $embedLink = SearchService::getEmbedLink($content['podcast_link']);
 
+                $shareButtons = \Share::currentPage()
+                    ->facebook()
+                    ->twitter()
+                    ->linkedin()
+                    ->reddit()
+                ->getRawLinks();
+
                 return view('episode-page', [
                     'pageDetails' => $pageDetails,
                     'content' => $content,
                     'transcript' => $transcript,
                     'embedLink' => $embedLink,
+                    'shareButtons' => $shareButtons,
                 ]);
             }
             else{

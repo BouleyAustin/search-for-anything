@@ -122,8 +122,8 @@
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                             <label class="text-sm sm:text-md font-medium">Custom URL:</label>
                             <div class="pl-3">
-                                <input wire:model="pageDetails.link_custom" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                @error('pageDetails.link_custom') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                <input wire:model="pageDetails.link_url" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
+                                @error('pageDetails.link_url') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                             </div>
                         </div>
                     </div>

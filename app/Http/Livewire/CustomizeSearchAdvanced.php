@@ -10,6 +10,16 @@ class CustomizeSearchAdvanced extends Component
     public $pageDetails;
     public $tags;
 
+    protected $rules = [
+        'pageDetails.link_instagram' => 'sometimes|nullable|url',
+        'pageDetails.link_tiktok' => 'sometimes|nullable|url',
+        'pageDetails.link_youtube' => 'sometimes|nullable|url',
+        'pageDetails.link_twitter' => 'sometimes|nullable|url',
+        'pageDetails.link_facebook' => 'sometimes|nullable|url',
+        'pageDetails.link_linkedin' => 'sometimes|nullable|url',
+        'pageDetails.link_url' => 'sometimes|nullable|url',
+    ];
+
     public function mount()
     {
         $this->pageDetails = Auth::user()->pages()->first()->toArray();
@@ -24,6 +34,8 @@ class CustomizeSearchAdvanced extends Component
 
     public function save()
     {
+        $this->validate();
+
         $update = Auth::user()->pages()->first();
         $update->url_ending = $this->pageDetails['url_ending'];
         $update->meta_title = $this->pageDetails['meta_title'];
