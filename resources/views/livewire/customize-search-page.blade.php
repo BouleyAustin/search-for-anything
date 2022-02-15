@@ -96,7 +96,7 @@
                                     <div class="flex bg-white overflow-hidden shadow-xl rounded-lg p-1">
                                         <input disabled
                                             placeholder="{{ $pageDetails['search_bar_input'] ?? 'What do you want to learn about?' }}"
-                                            class="border shadow-xs hover:border-gray-300 block w-full sm:text-sm border-gray-200 rounded-md text-center">
+                                            class="bg-white border shadow-xs hover:border-gray-300 block w-full sm:text-sm border-gray-200 rounded-md text-center">
                                         <x-jet-secondary-button>
                                             <p>&#128270;</p>
                                         </x-jet-secondary-button>

@@ -5,6 +5,14 @@
         </h2>
     </x-slot>
 
+    @if(Auth::user()->showOnboarding())
+        <div class="pt-8 m-2 sm:m-0">
+            <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+                <livewire:onboarding-checklist/>
+            </div>
+        </div>
+    @endif
+
     <div class="py-12 m-2 sm:m-0">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -14,7 +22,7 @@
                         <livewire:create-content/>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        @if(false)
+                        @if(count($contents))
                             @foreach($contents as $content)
                                 <div class="w-1/3 md:w-1/5 border rounded-md p-3 hover:bg-gray-50">
                                     <div class="h-42 w-42">

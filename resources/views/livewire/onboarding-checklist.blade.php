@@ -3,9 +3,9 @@
         <div class="p-3">
             <div class="flex flex-col text-center pr-2 sm:pr-2 pl-2 sm:pl-2 my-5">
                 @if(!$partOneCompleted)
-                    <h6 class="pl-2 text-lg sm:text-2xl font-semibold mb-1 mt-3">Onboarding Checklist To Get Started Quickly (Plus A Secret Gift)</h6>
+                    <h6 class="pl-2 text-lg sm:text-2xl font-semibold mb-1 mt-3">Onboarding Checklist To Get Started Quickly! (IMPORTANT!)</h6>
                 @else
-                    <h6 class="pl-2 text-lg sm:text-2xl font-semibold mb-1 mt-3">&#127881; Congrats On Completing The Checklist! &#127881;</h6>
+                    <h6 class="pl-2 text-lg sm:text-2xl font-semibold mb-1 mt-3">&#127881; Check out everything SearchPod.io has done for you! &#127881;</h6>
                 @endif
                 @if(!$partOneCompleted)
                     <div class="mt-5" x-data="{ dropdown: false }">
@@ -54,6 +54,9 @@
                                     <x-jet-secondary-button wire:click="submitRss">
                                         Save RSS Feed
                                     </x-jet-secondary-button>
+                                    <div wire:loading wire:target="submitRss">
+                                        <p>Loading...</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -95,14 +98,42 @@
                                 <div style="display: none" x-show="dropdown == true" class="p-3 text-left">
                                     <p class="text-left text-gray-600 mb-3">Go to your podcast sources and </p>
                                     <div class="mb-5 mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                                        <label class="text-sm sm:text-md font-medium text-gray-600">RSS Feed URL:</label>
+                                        <label class="text-sm sm:text-md font-medium text-gray-600">Apple Directory Link:</label>
                                         <div class="pl-3">
-                                            <input wire:model="rssUrl" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                                            @error('rssUrl') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                            <input wire:model="favoritePodcasts.apple" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                                            @error('favoritePodcasts.apple') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                                         </div>
                                     </div>
-                                    <x-jet-secondary-button wire:click="submitRss">
-                                        Save RSS Feed
+                                    <div class="mb-5 mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                        <label class="text-sm sm:text-md font-medium text-gray-600">Spotify Directory Link:</label>
+                                        <div class="pl-3">
+                                            <input wire:model="favoritePodcasts.spotify" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                                            @error('favoritePodcasts.spotify') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-5 mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                        <label class="text-sm sm:text-md font-medium text-gray-600">Google Directory Link:</label>
+                                        <div class="pl-3">
+                                            <input wire:model="favoritePodcasts.google" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                                            @error('favoritePodcasts.google') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-5 mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                        <label class="text-sm sm:text-md font-medium text-gray-600">Overcast Directory Link:</label>
+                                        <div class="pl-3">
+                                            <input wire:model="favoritePodcasts.overcast" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                                            @error('favoritePodcasts.overcast') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                        </div>
+                                    </div>
+                                    <div class="mb-5 mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                                        <label class="text-sm sm:text-md font-medium text-gray-600">Stitcher Directory Link:</label>
+                                        <div class="pl-3">
+                                            <input wire:model="favoritePodcasts.stitcher" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                                            @error('favoritePodcasts.stitcher') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                        </div>
+                                    </div>
+                                    <x-jet-secondary-button wire:click="saveFavorite">
+                                        Save Podcast Directories
                                     </x-jet-secondary-button>
                                 </div>
                             </div>
@@ -143,10 +174,39 @@
                                     </div>
                                 </div>
                                 <div style="display: none" x-show="dropdown == true" class="p-3 text-left">
-                                    <p class="text-left text-gray-600 mb-3">The Impeccable Screener is literally one of the best screeners on the internet right now! With a top rating by Benzinga and so many user reviews, you have to check this out if you want to find amazing stocks that fit you and your strategy in seconds!</p>
-                                    <a href="">
+                                    <div class="mt-5">
+                                        <div class="w-full border border-gray-200 rounded-lg" style="{{ $pageDetails['background_color'] != null ? 'background-color: ' . $pageDetails['background_color'] : '' }}">
+                                            <div class="p-5">
+                                                <div class="mb-5 font-sans text-gray-900 antialiased">
+                                                    <div class="mt-10">
+                                                        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+                                                            <div class="text-center">
+                                                                <p class="font-sans font-black text-3xl {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['search_title'] ?? 'The ' . $pageDetails['name'] . ' Search Engine' }}</p>
+                                                                <p class="pt-4 text-sm {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['sub_search_title'] ?? 'Search For Anything I Have Ever Said!' }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-8">
+                                                        <div class="flex bg-white overflow-hidden shadow-xl rounded-lg p-1">
+                                                            <input disabled
+                                                                   placeholder="{{ $pageDetails['search_bar_input'] ?? 'What do you want to learn about?' }}"
+                                                                   class="border shadow-xs hover:border-gray-300 block w-full sm:text-sm border-gray-200 rounded-md text-center text-white bg-white">
+                                                            <x-jet-secondary-button>
+                                                                <p>&#128270;</p>
+                                                            </x-jet-secondary-button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-10 text-center text-sm {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                                                        {{ $pageDetails['search_bar_text'] ?? 'Most Recent Searches: Your Top Content Ideas, etc' }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-left text-gray-600 mb-3 mt-5">This is what your search page (aka home page) looks like! Go customize it to your design and colors so it fits your brand and audience.</p>
+                                    <a href="{{ route('custom') }}">
                                         <x-jet-secondary-button>
-                                            Find Some Amazing Stocks
+                                            Go Customize My Page
                                         </x-jet-secondary-button>
                                     </a>
                                 </div>
@@ -188,26 +248,67 @@
                                     </div>
                                 </div>
                                 <div style="display: none" x-show="dropdown == true" class="p-3 text-left">
-                                    <p class="text-left text-gray-600 mb-3">The Impeccable Stock Alerts help you find stocks before they explode, keep you up to date on your portfolio and alert you to crashes before they happen! If you want to take advantage of this, you need to add stocks to your watchlist!</p>
-                                    <a href="">
-                                        <x-jet-secondary-button>
-                                            Let's Add Some Stocks
-                                        </x-jet-secondary-button>
-                                    </a>
+                                    <p class="text-left text-gray-600 mb-3 mt-3">Copy your search page link below and share it with your audience! They'll love your new site plus the initial traffic will help it rank higher in Google :)</p>
+                                    <div class="mt-3 mb-5">
+                                       <div class="bg-white p-3 rounded-lg">
+                                          <p>https://www.searchpod.io/{{ $pageDetails['url_ending'] }}</p>
+                                       </div>
+                                    </div>
+                                    <x-jet-secondary-button wire:click="shareSite">
+                                        Click When Done Sharing!
+                                    </x-jet-secondary-button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @else
-                    <div class="relative mt-3 mb-8">
+                    <div class="relative mt-3 mb-4">
                         <div class="text-center mt-3">
-                            <p class="text-lg text-gray-900 mb-3">Click Below And Sign Up For A Plan To Extend Your Trial And Get $10 Off For Life!</p>
-
-                            <a href="">
-                                <x-jet-secondary-button>
-                                    <p class="text-md">Claim My Exclusive Perks!</p>
-                                </x-jet-secondary-button>
-                            </a>
+                            <div class="my-5">
+                                <div class="flex flex-wrap justify-center items-center gap-5">
+                                    <div class="flex justify-left items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p>Podcast Info Imported From Your Feed</p>
+                                    </div>
+                                    <div class="flex justify-left items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p>{{ $episodeCount }} Dedicated Episode Pages Created</p>
+                                    </div>
+                                    <div class="flex justify-left items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p>Website Submitted To Be Indexed By Google</p>
+                                    </div>
+                                    <div class="flex justify-left items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p>Player / Directory Links Added</p>
+                                    </div>
+                                    <div class="flex justify-left items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p>Automatic Transcription Enabled</p>
+                                    </div>
+                                    <div class="flex justify-left items-center gap-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p>Website Optimized For Mobile</p>
+                                    </div>
+                                </div>
+                            </div>
+{{--                            <div class="pt-10">--}}
+{{--                                <x-jet-secondary-button>--}}
+{{--                                    <p class="text-md">Claim My FREE Gift!</p>--}}
+{{--                                </x-jet-secondary-button>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 @endif
