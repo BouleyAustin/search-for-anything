@@ -63,4 +63,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Page::class);
     }
+
+    public function showOnboarding()
+    {
+        $page = $this->pages()->first();
+        $rss = $page->podcast_rss != null;
+        $apple = $page->apple_link != null;
+        $color = $page->background_color != null;
+        $share = $page->social_share;
+
+        return !($rss && $apple && $color && $share);
+    }
 }

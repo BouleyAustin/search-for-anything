@@ -16,6 +16,8 @@ class CreateContent extends Component
     public $isViewing = false;
     public $content = [];
 
+    protected $listeners = ['createContent' => 'open'];
+
     protected $rules = [
         'content.name' => 'required|string',
         'content.type' => 'required',
@@ -32,6 +34,11 @@ class CreateContent extends Component
             'podcast_link' => null,
             'video_link' => null,
         ];
+    }
+
+    public function open()
+    {
+        $this->isViewing = true;
     }
 
     public function close()

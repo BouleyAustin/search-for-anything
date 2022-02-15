@@ -95,6 +95,20 @@ class CallToAction extends Component
         $this->isEditing = false;
     }
 
+    public function addLeaveAReview()
+    {
+        $newCTA = new \App\Models\CallToAction();
+        $newCTA->name = 'Leave A Review CTA';
+        $newCTA->title = 'Are you enjoying this podcast??';
+        $newCTA->sub_title = 'Leave a review to show your support and help this podcast reach more people!';
+        $newCTA->button_text = 'LEAVE A REVIEW :)';
+        $newCTA->button_url = URL::previous();
+        $newCTA->image_url = 'https://i5.walmartimages.com/asr/8e122f94-0ee7-4457-95e2-bbd70c0156e8_1.0ff2125f11697892eda3cffcdeceaa59.png';
+        Auth::user()->pages()->first()->callToAction()->save($newCTA);
+
+        $this->mount();
+    }
+
     public function render()
     {
         return view('livewire.call-to-action');

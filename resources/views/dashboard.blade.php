@@ -5,6 +5,14 @@
         </h2>
     </x-slot>
 
+    @if(Auth::user()->showOnboarding())
+        <div class="pt-8 m-2 sm:m-0">
+            <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+                <livewire:onboarding-checklist/>
+            </div>
+        </div>
+    @endif
+
     <div class="py-12 m-2 sm:m-0">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
             <livewire:analytics-dashboard/>

@@ -9,24 +9,35 @@
                     </button>
                 </div>
                 <div class="flex flex-wrap gap-3">
-                    @foreach($callToActions as $action)
-                        <div class="w-1/3 md:w-1/5 border rounded-md p-3 hover:bg-gray-50">
-                            <div class="h-42 w-42">
-                                <img src="https://referralrock.com/blog/wp-content/uploads/2019/06/referral-call-to-action.jpg"/>
+                    @if(count($callToActions))
+                        @foreach($callToActions as $action)
+                            <div class="w-1/3 md:w-1/5 border rounded-md p-3 hover:bg-gray-50">
+                                <div class="h-42 w-42">
+                                    <img src="https://referralrock.com/blog/wp-content/uploads/2019/06/referral-call-to-action.jpg"/>
+                                </div>
+                                <div class="mt-2 text-center">
+                                    <p>{{ substr($action['name'], 0, 40) }}</p>
+                                </div>
+                                <div class="mt-2 flex flex-col md:flex-row justify-center items-center gap-2">
+                                    <x-jet-secondary-button wire:click="openEdit({{ $action['id'] }})">
+                                        Edit
+                                    </x-jet-secondary-button>
+                                    <x-jet-danger-button wire:click="deleteCTA({{ $action['id'] }})">
+                                        Delete
+                                    </x-jet-danger-button>
+                                </div>
                             </div>
-                            <div class="mt-2 text-center">
-                                <p>{{ substr($action['name'], 0, 40) }}</p>
-                            </div>
-                            <div class="mt-2 flex flex-col md:flex-row justify-center items-center gap-2">
-                                <x-jet-secondary-button wire:click="openEdit({{ $action['id'] }})">
-                                    Edit
-                                </x-jet-secondary-button>
-                                <x-jet-danger-button wire:click="deleteCTA({{ $action['id'] }})">
-                                    Delete
-                                </x-jet-danger-button>
-                            </div>
+                        @endforeach
+                    @else
+                        <div wire:click="$toggle('isCreating')" class="relative block w-1/3 md:w-1/5 border border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                            <span class="mt-2 block text-sm font-medium text-gray-900"> Create A New Call To Action Section </span>
                         </div>
-                    @endforeach
+                        <div wire:click="addLeaveAReview" class="relative block w-1/3 md:w-1/5 border border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <img class="h-12 w-auto mx-auto" src="https://i5.walmartimages.com/asr/8e122f94-0ee7-4457-95e2-bbd70c0156e8_1.0ff2125f11697892eda3cffcdeceaa59.png"/>
+                            <span class="mt-2 block text-sm font-medium text-gray-900"> Add The "Leave A Review" Call To Action Section </span>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

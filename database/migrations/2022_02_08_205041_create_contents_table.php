@@ -29,7 +29,12 @@ class CreateContentsTable extends Migration
             $table->boolean('show_cta')->default(false);
             $table->unsignedBigInteger('cta_id')->nullable();
             $table->bigInteger('cta_clicks')->default(0);
+            $table->bigInteger('email_optin')->default(0);
             $table->bigInteger('social_share_clicks')->default(0);
+            $table->string('meta_title')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_robots')->nullable();
+            $table->string('meta_keywords')->nullable();
             $table->timestamps();
 
             $table->foreign('page_id')
