@@ -23,6 +23,14 @@
         <!-- Share JS -->
         <script src="{{ asset('js/share.js') }}"></script>
 
+        <script>
+
+            setTimeout(function() {
+                Livewire.emit('openNextEpisodePopup');
+            }, {{ $content['length'] == 0 ? 1800000 : $content['length'] * 1000 }});
+
+        </script>
+
         @livewireStyles
 
         <!-- Scripts -->
@@ -93,6 +101,7 @@
                 </div>
             </div>
         </div>
+        <livewire:next-episode-popup :contentId="$content['id']" :pageId="$pageDetails['id']"/>
     </main>
     <footer class="mb-10">
         <div class="text-center {{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'text-black' : 'text-white') : '' }}">
