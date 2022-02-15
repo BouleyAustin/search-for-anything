@@ -86,7 +86,7 @@
                                         </div>
                                     </div>
                                     <div @click="dropdown = !dropdown" class="flex justify-right items-center space-x-3">
-                                        <p class="text-md text-gray-600">4 mins</p>
+                                        <p class="text-md text-gray-600">3 mins</p>
                                         <div x-show="dropdown == false">
                                             <svg class="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                                         </div>
