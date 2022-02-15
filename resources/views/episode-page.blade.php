@@ -86,24 +86,26 @@
                 </div>
             @endif
 
-            <div class="mt-10 text-center pb-36 text-black">
-                <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
-                        <div class="p-5">
-                            <p class="mt-5 text-xl">Transcript:</p>
-                            <div class="mt-5 mb-5 max-w-5xl text-md text-center mx-auto sm:px-6 lg:px-8">
-                                @foreach($transcript as $item)
-                                    <p class="mt-3">{{ $item['sentence'] }}</p>
-                                @endforeach
+            @if(count($transcript))
+                <div class="mt-10 text-center pb-36 text-black">
+                    <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
+                        <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
+                            <div class="p-5">
+                                <p class="mt-5 text-xl">Transcript:</p>
+                                <div class="mt-5 mb-5 max-w-5xl text-md text-center mx-auto sm:px-6 lg:px-8">
+                                    @foreach($transcript as $item)
+                                        <p class="mt-3">{{ $item['sentence'] }}</p>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
         <livewire:next-episode-popup :contentId="$content['id']" :pageId="$pageDetails['id']"/>
     </main>
-    <footer class="mb-10">
+    <footer class="mb-10 {{ count($transcript) ? '' : 'mt-36' }}">
         <div class="text-center {{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'text-black' : 'text-white') : '' }}">
             <div class="mb-5">
                 <a href="{{ route('landing') }}"><p class="hover:underline">Want To Automate Your Own Podcast? Click Here!</p></a>

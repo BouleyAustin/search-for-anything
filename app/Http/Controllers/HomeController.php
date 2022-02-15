@@ -65,12 +65,6 @@ class HomeController extends Controller
 
     public static function showContentPage()
     {
-        $page = Auth::user()->pages()->first();
-        $contents = $page->contents()->get();
-
-        return view('content', [
-            'page' => $page->toArray(),
-            'contents' => $contents
-        ]);
+        return view('content');
     }
 }

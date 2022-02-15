@@ -50,6 +50,32 @@
 
         <x-slot name="content">
 
+            <div class="mt-5">
+                <p class="mb-2">Preview:</p>
+                <div class="w-full">
+                    <div class="bg-white border border-gray-200 rounded sm:rounded-lg">
+                        <div class="p-6">
+                            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                                <div>
+                                    <img class="w-60 h-full" src="{{ $callToAction['image_url'] ?? '/logo.png' }}"/>
+                                </div>
+                                <div class="max-w-md">
+                                    <p class="text-2xl font-bold">{{ $callToAction['title'] ?? 'Temp Title'}}</p>
+                                    <p class="mt-2">{{ $callToAction['sub_title'] ?? 'Temp Sub Title' }}</p>
+                                    <div class="mt-5">
+                                        <a href="{{ $callToAction['button_url'] }}" target="_blank">
+                                            <x-jet-secondary-button>
+                                                {{ $callToAction['button_text'] ?? 'Place Holder' }}
+                                            </x-jet-secondary-button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="mt-10 mb-3">
 
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
@@ -120,6 +146,32 @@
         </x-slot>
 
         <x-slot name="content">
+
+            <div class="mt-5">
+                <p class="mb-2">Preview:</p>
+                <div class="w-full">
+                    <div class="bg-white border border-gray-200 rounded sm:rounded-lg">
+                        <div class="p-6">
+                            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                                <div>
+                                    <img class="w-96 h-full" src="{{ $callToAction['image_url'] }}"/>
+                                </div>
+                                <div class="max-w-md">
+                                    <p class="text-2xl font-bold">{{ $callToAction['title'] }}</p>
+                                    <p class="mt-2">{{ $callToAction['sub_title'] }}</p>
+                                    <div class="mt-5">
+                                        <a href="{{ $callToAction['button_url'] }}" target="_blank">
+                                            <x-jet-secondary-button>
+                                                {{ $callToAction['button_text'] }}
+                                            </x-jet-secondary-button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="mt-10 mb-3">
 
