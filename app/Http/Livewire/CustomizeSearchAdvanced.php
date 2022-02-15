@@ -10,16 +10,6 @@ class CustomizeSearchAdvanced extends Component
     public $pageDetails;
     public $tags;
 
-    protected $rules = [
-        'pageDetails.link_instagram' => 'sometimes|nullable|url',
-        'pageDetails.link_tiktok' => 'sometimes|nullable|url',
-        'pageDetails.link_youtube' => 'sometimes|nullable|url',
-        'pageDetails.link_twitter' => 'sometimes|nullable|url',
-        'pageDetails.link_facebook' => 'sometimes|nullable|url',
-        'pageDetails.link_linkedin' => 'sometimes|nullable|url',
-        'pageDetails.link_url' => 'sometimes|nullable|url',
-    ];
-
     public function mount()
     {
         $this->pageDetails = Auth::user()->pages()->first()->toArray();
@@ -34,7 +24,28 @@ class CustomizeSearchAdvanced extends Component
 
     public function save()
     {
-        $this->validate();
+        $this->validate([
+            'pageDetails.link_instagram' => 'sometimes|nullable|url',
+            'pageDetails.link_tiktok' => 'sometimes|nullable|url',
+            'pageDetails.link_youtube' => 'sometimes|nullable|url',
+            'pageDetails.link_twitter' => 'sometimes|nullable|url',
+            'pageDetails.link_facebook' => 'sometimes|nullable|url',
+            'pageDetails.link_linkedin' => 'sometimes|nullable|url',
+            'pageDetails.link_url' => 'sometimes|nullable|url',
+            'pageDetails.url_ending' => 'required|string|unique:pages,url_ending,' . Auth::user()->id,
+            'pageDetails.meta_title' => 'sometimes|nullable|string',
+            'pageDetails.meta_description' => 'sometimes|nullable|string',
+            'pageDetails.meta_keywords' => 'sometimes|nullable|string',
+            'pageDetails.meta_robots' => 'sometimes|nullable|string',
+            'pageDetails.podcast_rss' => 'sometimes|nullable|url',
+            'pageDetails.automatic_transcription' => 'required|boolean',
+            'pageDetails.collect_email' => 'required|boolean',
+            'pageDetails.email_provider' => 'sometimes|nullable|string',
+            'pageDetails.email_api_key' => 'sometimes|nullable|string',
+            'pageDetails.email_api_tag' => 'sometimes|nullable|string',
+            'pageDetails.tracking_code_search' => 'sometimes|nullable|longText',
+            'pageDetails.tracking_code_episode' => 'sometimes|nullable|longText',
+        ]);
 
         $update = Auth::user()->pages()->first();
         $update->url_ending = $this->pageDetails['url_ending'];

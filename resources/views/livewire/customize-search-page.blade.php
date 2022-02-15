@@ -29,28 +29,28 @@
                                 <label class="text-sm sm:text-md font-medium">Search Title:</label>
                                 <div class="pl-3">
                                     <input wire:model="pageDetails.search_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                    @error('pageDetails.search_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                                 <label class="text-sm sm:text-md font-medium">Sub Search Title:</label>
                                 <div class="pl-3">
                                     <input wire:model="pageDetails.sub_search_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                    @error('pageDetails.sub_search_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                                 <label class="text-sm sm:text-md font-medium">Search Bar Input Text:</label>
                                 <div class="pl-3">
                                     <input wire:model="pageDetails.search_bar_input" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                    @error('pageDetails.search_bar_input') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
                                 <label class="text-sm sm:text-md font-medium">Text Below Search Bar:</label>
                                 <div class="pl-3">
                                     <input wire:model="pageDetails.search_bar_text" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                    @error('pageDetails.search_bar_text') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                             <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
@@ -66,7 +66,7 @@
                                 <label class="text-sm sm:text-md font-medium">Background Color:</label>
                                 <div class="pl-3">
                                     <input wire:model="pageDetails.background_color" type="color" class="border shadow-sm block w-10 sm:text-sm border-gray-300 rounded-md">
-                                    @error('content.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                                    @error('pageDetails.background_color') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                                 </div>
                             </div>
                         </div>

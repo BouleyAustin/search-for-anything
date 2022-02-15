@@ -10,6 +10,15 @@ class CustomizeSearchPage extends Component
 {
     public $pageDetails;
 
+    protected $rules = [
+        'pageDetails.search_title' => 'required|string',
+        'pageDetails.sub_search_title' => 'required|string',
+        'pageDetails.search_bar_input' => 'required|string',
+        'pageDetails.search_bar_text' => 'required|string',
+        'pageDetails.text_color' => 'required|string',
+        'pageDetails.background_color' => 'required|string',
+    ];
+
     public function mount()
     {
         $this->pageDetails = Auth::user()->pages()->first()->toArray();
@@ -18,6 +27,8 @@ class CustomizeSearchPage extends Component
 
     public function save()
     {
+        $this->validate();
+
         $update = Auth::user()->pages()->first();
         $update->search_title = $this->pageDetails['search_title'];
         $update->sub_search_title = $this->pageDetails['sub_search_title'];

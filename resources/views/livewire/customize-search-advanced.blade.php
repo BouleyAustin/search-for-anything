@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                            <label class="block text-sm font-medium">Email Provider:</label>
+                            <label class="block text-sm font-medium">Meta Robots:</label>
                             <div class="pl-3">
                                 <select wire:model="pageDetails.meta_robots" class="mt-1 block w-52 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 hover:border-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                                     <option value=null>Index, Follow (recommended)</option>

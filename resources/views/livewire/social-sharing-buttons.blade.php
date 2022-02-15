@@ -4,7 +4,7 @@
             <div class="text-white">
                 <div class="flex flex-col gap-4 justify-center items-left">
                     <div>
-                        <p class="text-xs">Share</p>
+                        <p class="text-xs {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : 'text-black' }}">Share</p>
                     </div>
                     <div>
                         <a href="{{ $shareButtons['reddit'] }}" target="_blank">
