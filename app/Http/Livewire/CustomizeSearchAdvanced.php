@@ -95,14 +95,16 @@ class CustomizeSearchAdvanced extends Component
 
         $update = Auth::user()->pages()->first();
 
-        $file = $this->pageDetails['favicon_url']->store('images');
+        if($this->pageDetails['favicon_url'] != null && $update->favicon_url == null){
+            $file = $this->pageDetails['favicon_url']->store('images');
+            $update->favicon_url = Storage::url($file);
+        }
 
         $update->url_ending = $this->pageDetails['url_ending'];
         $update->meta_title = $this->pageDetails['meta_title'];
         $update->meta_description = $this->pageDetails['meta_description'];
         $update->meta_keywords = $this->pageDetails['meta_keywords'];
         $update->meta_robots = $this->pageDetails['meta_robots'];
-        $update->favicon_url = Storage::url($file);
         $update->save();
 
         session()->flash('successSEO', 'Your settings have been successfully updated!');
