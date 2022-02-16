@@ -14,7 +14,7 @@
             <div class="mt-10 mb-3">
 
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">Content Name:</label>
+                    <label class="text-sm sm:text-md font-medium">Title:</label>
                     <div class="pl-3">
                         <input wire:model="content.title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('content.title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
@@ -25,6 +25,20 @@
                     <div class="pl-3">
                         <input wire:model="content.podcast_link" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
                         @error('content.podcast_link') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                    <label class="text-sm sm:text-md font-medium">Apple Podcast Link (optional):</label>
+                    <div class="pl-3">
+                        <input wire:model="content.apple_link" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('content.apple_link') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                    <label class="text-sm sm:text-md font-medium">Spotify Podcast Link (optional):</label>
+                    <div class="pl-3">
+                        <input wire:model="content.spotify_link" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('content.spotify_link') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
                 <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
@@ -70,6 +84,31 @@
                         </div>
                     </div>
                 @endif
+
+                <div class="mt-5">
+                    <p class="mb-3 text-sm">SEO Details:</p>
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">Meta Title:</label>
+                        <div class="pl-3">
+                            <input wire:model="content.meta_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('content.meta_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">Meta Description:</label>
+                        <div class="pl-3">
+                            <input wire:model="content.meta_description" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('content.meta_description') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">Meta Keywords:</label>
+                        <div class="pl-3">
+                            <input wire:model="content.meta_keywords" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('content.meta_keywords') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+                </div>
 
                 <div x-data="{ open: false }">
                     <div x-show="!open">

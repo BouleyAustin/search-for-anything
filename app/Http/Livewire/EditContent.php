@@ -21,7 +21,12 @@ class EditContent extends Component
         'content.title' => 'required|string',
         'content.platform' => 'required',
         'content.podcast_link' => 'required|url',
-        'content.show_cta' => 'required|boolean'
+        'content.show_cta' => 'required|boolean',
+        'content.apple_link' => 'sometimes|nullable|url',
+        'content.spotify_link' => 'sometimes|nullable|url',
+        'content.meta_title' => 'sometimes|nullable|string',
+        'content.meta_description' => 'sometimes|nullable|string',
+        'content.meta_keywords' => 'sometimes|nullable|string',
     ];
 
     public function readyToLoad()

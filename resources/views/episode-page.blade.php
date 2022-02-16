@@ -76,7 +76,7 @@
 
             @if($pageDetails['collect_email'])
                 <div class="mt-10 text-center text-black">
-                    <livewire:email-optin :pageDetails="$pageDetails"/>
+                    <livewire:email-optin :pageDetails="$pageDetails" :contentId="$content['id']"/>
                 </div>
             @endif
 
