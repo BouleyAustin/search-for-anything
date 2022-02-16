@@ -29,7 +29,7 @@ class SearchService
                 $temp = [
                     'title' => $content->title,
                     'sentence' => substr($item['sentence'], strpos($item['sentence'],  ' '),80),
-                    'link' => '/' . $pageUrl . '/' . $content->url_ending,
+                    'link' => '/' . $pageUrl . '/episodes/' . $content->url_ending,
                     'starts_at' => $item['starts_at'],
                     'content_id' => $content->id,
                 ];

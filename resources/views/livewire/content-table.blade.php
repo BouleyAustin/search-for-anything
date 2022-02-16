@@ -16,7 +16,7 @@
                     <div class="mt-2 flex flex-col md:flex-row justify-center items-center gap-2">
                         <livewire:edit-content :contentId="$content->id" :wire:key="$content->id"/>
 
-                        <a href="{{ '/' . $pageUrl . '/' . $content->url_ending }}" target="_blank">
+                        <a href="{{ '/' . $pageUrl . '/episodes/' . $content->url_ending }}" target="_blank">
                             <x-jet-secondary-button>
                                 View
                             </x-jet-secondary-button>

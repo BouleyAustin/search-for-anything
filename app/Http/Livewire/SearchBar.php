@@ -13,6 +13,8 @@ class SearchBar extends Component
     public $searchResults = [];
     public $searchBarText;
     public $searchBarInput;
+    public $pageImage;
+    public $pageUrl;
     public $textColor;
     public $pageId;
     public $searched = false;

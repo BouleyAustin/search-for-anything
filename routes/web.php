@@ -38,6 +38,10 @@ Route::get('/{name}', '\App\Http\Controllers\HomeController@showSearchPage')
     ->middleware(['pageview'])
     ->name('search-page');
 
-Route::get('/{name}/{episodeName}', '\App\Http\Controllers\HomeController@showEpisodePage')
+Route::get('/{name}/episodes', '\App\Http\Controllers\HomeController@showEpisodesPage')
+    ->middleware(['pageview'])
+    ->name('episodes-page');
+
+Route::get('/{name}/episodes/{episodeName}', '\App\Http\Controllers\HomeController@showEpisodePage')
     ->middleware(['pageview'])
     ->name('episode-page');

@@ -64,6 +64,22 @@ class HomeController extends Controller
         }
     }
 
+    public static function showEpisodesPage($name)
+    {
+        if($page = Page::where('url_ending', $name)->first()){
+
+            $pageDetails = $page->toArray();
+            $pageDetails = HelperService::setPageDetailsDefaults($pageDetails);
+
+            return view('episodes-page', [
+                'pageDetails' => $pageDetails
+            ]);
+        }
+        else{
+            return view('landing');
+        }
+    }
+
     public static function showContentPage()
     {
         return view('content');

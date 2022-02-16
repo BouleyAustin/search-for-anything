@@ -30,17 +30,19 @@
     </head>
     <main class="flex-grow">
         <div class="mb-5 font-sans text-gray-900 antialiased">
-            <div class="mt-48">
+            <div class="mt-24 mb-10">
                 <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
                     <div class="text-center">
-                        <p class="font-sans font-black text-2xl sm:text-3xl {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['search_title'] ?? 'The ' . $pageDetails['name'] . ' Search Engine' }}</p>
-                        <p class="pt-4 text-md {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['sub_search_title'] ?? 'Search For Anything I Have Ever Said!' }}</p>
+                        <p class="font-sans font-black text-2xl sm:text-3xl {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['name'] }} Episodes</p>
                     </div>
                 </div>
             </div>
-            <div class="m-2 sm:m-0">
-                <div class="mt-8">
-                    <livewire:search-bar :textColor="$pageDetails['text_color']" :searchBarInput="$pageDetails['search_bar_input']" :searchBarText="$pageDetails['search_bar_text']" :pageId="$pageDetails['id']" :pageImage="$pageDetails['link_home']" :pageUrl="$pageDetails['url_ending']"/>
+            <div class="m-2 sm:m-0 pb-36">
+                <livewire:show-episodes :pageId="$pageDetails['id']" :pageImage="$pageDetails['link_home']"/>
+                <div class="mt-10 flex justify-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
+                    <a class="hover:underline" href="/{{ $pageDetails['url_ending'] }}">
+                        Return To The Search Page
+                    </a>
                 </div>
             </div>
         </div>

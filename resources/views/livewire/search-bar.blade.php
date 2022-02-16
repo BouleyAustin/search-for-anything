@@ -39,7 +39,7 @@
                             <div class="p-5">
                                 <div class="mt-1 whitespace-wrap text-sm font-medium text-gray-900">
                                     <div class="flex items-center gap-2">
-                                        <img src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg" class="w-10 h-10"/>
+                                        <img src="{{ $pageImage ?? 'https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg' }}" class="w-10 h-10"/>
                                         <p class="text-wrap font-bold">{{ $result['title'] }}</p>
                                     </div>
                                 </div>
@@ -58,7 +58,9 @@
     </div>
     @if(count($searchResults) == 0)
         <div class="mt-10 text-center text-sm sm:text-base {{ $textColor != null ? 'text-' . $textColor : '' }}">
-            {{ $searchBarText ?? 'Most Recent Searches: Your Top Content Ideas, etc' }}
+            <a href="/{{ $pageUrl }}/episodes">
+                <p class="hover:underline">{{ $searchBarText ?? 'Check out all our episodes here!' }}</p>
+            </a>
         </div>
     @endif
 </div>
