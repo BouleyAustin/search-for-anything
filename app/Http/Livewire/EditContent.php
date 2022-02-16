@@ -70,7 +70,7 @@ class EditContent extends Component
 
         TranscriptionService::getTranscriptionFromImport($updateContent->id, $txtUrl);
 
-        $this->isViewing = false;
+        return redirect(URL::previous());
     }
 
     public function updateTranscript()

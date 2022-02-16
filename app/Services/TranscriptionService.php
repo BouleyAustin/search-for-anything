@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Storage;
 
 class TranscriptionService
 {
-    public static function getTranscriptionFromImport($contentId, $imageUrl)
+    public static function getTranscriptionFromImport($contentId, $textUrl)
     {
-        $text = file_get_contents($imageUrl);
+        $text = file_get_contents($textUrl);
 
         $text = str_replace("\n", "", $text);
         $text = str_replace("===", " ", $text);
@@ -32,5 +32,7 @@ class TranscriptionService
                 $content->transcript()->save($newItem);
             }
         }
+
+        HelperService::deleteFromAmazons3($textUrl);
     }
 }

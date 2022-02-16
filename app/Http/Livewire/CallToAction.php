@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Content;
+use App\Services\HelperService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
@@ -88,7 +89,7 @@ class CallToAction extends Component
         if($this->editPhoto != null){
             $file = $this->editPhoto->store('images');
             $updateCTA->image_url = Storage::url($file);
-            Storage::delete($this->callToAction['image_url']);
+            HelperService::deleteFromAmazons3($this->callToAction['image_url']);
         }
 
         $updateCTA->save();

@@ -10,6 +10,7 @@ use App\Models\Page;
 use App\Models\PageViews;
 use App\Models\Transcription;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class HelperService
 {
@@ -94,5 +95,12 @@ class HelperService
                 'email' => $email,
             ]);
         }
+    }
+
+    public static function deleteFromAmazons3($url)
+    {
+        $position = strpos($url, 'aws.com');
+        $path = substr($url, $position + 8);
+        Storage::delete($path);
     }
 }
