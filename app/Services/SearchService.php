@@ -56,10 +56,14 @@ class SearchService
             return substr($link, 0, $position) . 'embed.' . substr($link, $position);
         }
         elseif(str_contains($link, 'anchor')){
-            return 'https://anchor.fm/theimpeccableinvestor/embed/episodes/Understanding-The-Fear-And-Greed-Index-e1dpjnh';
+            $position = strpos($link, '/episodes');
+            return substr($link, 0, $position) . '/embed/' . substr($link, $position + 1);
+        }
+        elseif(str_contains($link, 'buzzsprout')){
+            return $link;
         }
         else{
-            return 'https://anchor.fm/theimpeccableinvestor/embed/episodes/Understanding-The-Fear-And-Greed-Index-e1dpjnh';
+            return $link;
         }
     }
 

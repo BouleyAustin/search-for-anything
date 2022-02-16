@@ -39,6 +39,7 @@ class RSSHelper
                 $urlEnding = str_replace('$', '', $urlEnding);
                 $urlEnding = str_replace('%', '', $urlEnding);
                 $urlEnding = str_replace('#', '', $urlEnding);
+                $urlEnding = str_replace(':', '', $urlEnding);
                 $urlEnding = preg_replace('/\s+/', ' ',$urlEnding);
                 $urlEnding = str_replace(' ', '-', $urlEnding);
 

@@ -254,6 +254,9 @@
                                           <p>https://www.searchpod.io/{{ $pageDetails['url_ending'] }}</p>
                                        </div>
                                     </div>
+                                    <a href="{{ route('custom') }}">
+                                        <p class="mt-3 mb-5 text-gray-600 underline">Change/Customize Your Link</p>
+                                    </a>
                                     <x-jet-secondary-button wire:click="shareSite">
                                         Click When Done Sharing!
                                     </x-jet-secondary-button>

@@ -20,6 +20,8 @@ class CreateContentsTable extends Migration
             $table->string('title')->nullable();
             $table->string('podcast_rss')->nullable();
             $table->string('podcast_link')->nullable();
+            $table->string('apple_link')->nullable();
+            $table->string('spotify_link')->nullable();
             $table->string('video_link')->nullable();
             $table->longText('summary')->nullable();
             $table->string('platform')->nullable();

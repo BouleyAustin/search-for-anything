@@ -8,7 +8,7 @@
             @foreach($contents as $content)
                 <div class="w-52 border rounded-md p-3 hover:bg-gray-50">
                     <div class="h-42 w-42">
-                        <img src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg"/>
+                        <img src="{{ $pageImage ?? 'https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg' }}"/>
                     </div>
                     <div class="mt-2 text-center text-wrap">
                         <p>{{ substr($content->title, 0, 30) }}...</p>

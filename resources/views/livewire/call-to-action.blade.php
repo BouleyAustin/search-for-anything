@@ -11,9 +11,9 @@
                 <div class="flex flex-wrap justify-center items-center gap-3">
                     @if(count($callToActions))
                         @foreach($callToActions as $action)
-                            <div class="w-1/3 md:w-1/5 border rounded-md p-3 hover:bg-gray-50">
+                            <div class="w-1/3 md:w-1/5 h-64 border rounded-md p-3 hover:bg-gray-50">
                                 <div class="h-42 w-42">
-                                    <img src="https://referralrock.com/blog/wp-content/uploads/2019/06/referral-call-to-action.jpg"/>
+                                    <img src="{{ $action['image_url'] ?? 'https://referralrock.com/blog/wp-content/uploads/2019/06/referral-call-to-action.jpg' }}"/>
                                 </div>
                                 <div class="mt-2 text-center">
                                     <p>{{ substr($action['name'], 0, 40) }}</p>

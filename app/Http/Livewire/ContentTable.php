@@ -13,12 +13,14 @@ class ContentTable extends Component
 
     public $pageName = '';
     public $pageUrl = '';
+    public $pageImage;
 
     public function mount()
     {
         $page = Auth::user()->pages()->first();
         $this->pageName = $page->name;
         $this->pageUrl = $page->url_ending;
+        $this->pageImage = $page->link_home;
     }
 
     public function render()
