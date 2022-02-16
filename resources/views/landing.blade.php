@@ -27,9 +27,9 @@
                         </div>
                     </div>
                     <div class="hidden md:block text-right">
-          <span class="inline-flex rounded-md shadow-md ring-1 ring-black ring-opacity-5">
-            <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"> Join The Waitlist </a>
-          </span>
+                      <span class="inline-flex rounded-md shadow-md ring-1 ring-black ring-opacity-5">
+                        <a href="{{ route('login') }}" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50"> Login </a>
+                      </span>
                     </div>
                 </nav>
 
