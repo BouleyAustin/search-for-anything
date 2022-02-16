@@ -48,7 +48,7 @@ class AnalyticsService
         $total = $callToActions->sum('total_clicks');
         $count = $callToActions->count() == 0 ? 1 : $callToActions->count();
 
-        $change = round($callToActions->sum('click_through_rate') / $callToActions->count(), 2);
+        $change = round($callToActions->sum('click_through_rate') / $count, 2);
         $change = $change . '%';
 
         return ['total' => $total, 'change' => $change];
