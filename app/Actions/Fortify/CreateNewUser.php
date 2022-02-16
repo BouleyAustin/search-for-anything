@@ -34,10 +34,10 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
 
-        $newPage = new Page();
-        $newPage->name = $input['name'];
-        $newPage->url_ending = str_replace(' ', '', $input['name']) . random_int(0, 1000);
-        $user->pages()->save($newPage);
+//        $newPage = new Page();
+//        $newPage->name = $input['name'];
+//        $newPage->url_ending = str_replace(' ', '', $input['name']) . random_int(0, 1000);
+//        $user->pages()->save($newPage);
 
         return $user;
     }

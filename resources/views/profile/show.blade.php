@@ -40,6 +40,44 @@
                     @livewire('profile.delete-user-form')
                 </div>
             @endif
+
+            <x-jet-section-border/>
+
+                <div>
+                    <x-jet-action-section>
+                        <x-slot name="title">
+                            {{ __('Billing Details') }}
+                        </x-slot>
+
+                        <x-slot name="description">
+                            {{ __('You will be able to update your credit card, change your subscription plan or cancel your account.') }}
+                        </x-slot>
+
+                        <x-slot name="content">
+
+                            <h3 class="text-lg font-medium text-gray-900">
+                                You can manage your subscription here.
+                            </h3>
+
+                            <div class="mt-3 max-w-xl text-sm text-gray-600">
+                                <p>
+                                    I've been working on improving this software so you can grow and monetize your podcast with ease!
+                                     This means the cancellation button/feature got pushed to the side. You can easily cancel by email me :)
+                                </p>
+                            </div>
+
+                            <div class="pt-5">
+                                <a href="mailto:support@theimpeccableinvestor.com">
+                                    <x-jet-danger-button>
+                                        {{ __('Cancel') }}
+                                    </x-jet-danger-button>
+                                </a>
+                            </div>
+
+                        </x-slot>
+
+                    </x-jet-action-section>
+                </div>
         </div>
     </div>
 </x-app-layout>

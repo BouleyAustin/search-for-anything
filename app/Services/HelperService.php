@@ -91,7 +91,7 @@ class HelperService
             Http::withHeaders([
                 'Content-Type' => 'application/json',
             ])->post('https://api.convertkit.com/v3/tags/' . $tag .'/subscribe', [
-                'api_secret' => $apiKey,
+                'api_key' => $apiKey,
                 'email' => $email,
             ]);
         }

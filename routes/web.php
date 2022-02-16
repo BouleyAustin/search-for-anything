@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/app/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified', 'payment'])->get('/app/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/app/content', '\App\Http\Controllers\HomeController@showContentPage')->name('content');
+Route::middleware(['auth:sanctum', 'verified', 'payment'])->get('/app/content', '\App\Http\Controllers\HomeController@showContentPage')->name('content');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/app/custom', function () {
+Route::middleware(['auth:sanctum', 'verified', 'payment'])->get('/app/custom', function () {
     return view('custom');
 })->name('custom');
 
@@ -30,6 +30,12 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('landing');
 })->name('home');
+
+Route::get('/app/payment', '\App\Http\Controllers\PaymentController@show')
+    ->name('payment');
+
+Route::post('/app/payment', '\App\Http\Controllers\PaymentController@createSubscription')
+    ->name('payment.post');
 
 Route::get('/sitemap.xml', '\App\Http\Controllers\HomeController@showSiteMap')
     ->name('site-map');

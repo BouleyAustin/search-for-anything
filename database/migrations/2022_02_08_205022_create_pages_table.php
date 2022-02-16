@@ -47,7 +47,7 @@ class CreatePagesTable extends Migration
             $table->string('pocketcasts_link')->nullable();
             $table->string('radiopublic_link')->nullable();
             $table->string('stitcher_link')->nullable();
-            $table->boolean('social_share');
+            $table->boolean('social_share')->default(false);
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
             $table->string('meta_robots')->nullable();
