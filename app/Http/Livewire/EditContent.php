@@ -6,16 +6,21 @@ use App\Models\Content;
 use App\Models\Transcription;
 use App\Services\TranscriptionService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditContent extends Component
 {
+    use WithFileUploads;
+
     public $contentId;
     public $isViewing = false;
     public $content = [];
     public $transcript = [];
     public $callToActions = [];
+    public $file;
 
     protected $rules = [
         'content.title' => 'required|string',
@@ -27,6 +32,7 @@ class EditContent extends Component
         'content.meta_title' => 'sometimes|nullable|string',
         'content.meta_description' => 'sometimes|nullable|string',
         'content.meta_keywords' => 'sometimes|nullable|string',
+        'file' => 'sometimes|nullable|mimes:txt',
     ];
 
     public function readyToLoad()
@@ -58,6 +64,11 @@ class EditContent extends Component
         $updateContent->meta_title = $this->content['meta_title'];
         $updateContent->meta_keywords = $this->content['meta_keywords'];
         $updateContent->save();
+
+        $file = $this->file->store('txt');
+        $txtUrl = Storage::url($file);
+
+        TranscriptionService::getTranscriptionFromImport($updateContent->id, $txtUrl);
 
         $this->isViewing = false;
     }

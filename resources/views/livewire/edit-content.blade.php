@@ -110,28 +110,38 @@
                     </div>
                 </div>
 
-                <div x-data="{ open: false }">
-                    <div x-show="!open">
-                        <p @click="open = true" class="mt-10 text-gray-700 font-medium text-sm underline">Click To Edit Transcript</p>
-                    </div>
-                    <div x-show="open">
-                        <p @click="open = false" class="mt-10 text-sm text-gray-700 font-medium underline">Close The Transcript</p>
-                        <div class="text-sm text-gray-700 font-medium">
-                            @foreach($transcript as $item)
-                                <div class="mt-5">
-                                    <p>Section #{{ $loop->index + 1 }} - {{ $item['confidence'] * 100 }}% Confidence</p>
-                                    <textarea class="w-full rounded border border-gray-300 mt-2" rows="5" wire:model="transcript.{{ $loop->index }}.sentence">
-                                    </textarea>
-                                </div>
-                            @endforeach
+                @if(count($transcript))
+                    <div x-data="{ open: false }">
+                        <div x-show="!open">
+                            <p @click="open = true" class="mt-10 text-gray-700 font-medium text-sm underline">Click To Edit Transcript</p>
                         </div>
-                        <div class="mt-5">
-                            <x-jet-secondary-button wire:click="updateTranscript" @click="open = false">
-                                Update Transcript
-                            </x-jet-secondary-button>
+                        <div x-show="open">
+                            <p @click="open = false" class="mt-10 text-sm text-gray-700 font-medium underline">Close The Transcript</p>
+                            <div class="text-sm text-gray-700 font-medium">
+                                @foreach($transcript as $item)
+                                    <div class="mt-5">
+                                        <p>Section #{{ $loop->index + 1 }} - {{ $item['confidence'] * 100 }}% Confidence</p>
+                                        <textarea class="w-full rounded border border-gray-300 mt-2" rows="5" wire:model="transcript.{{ $loop->index }}.sentence">
+                                        </textarea>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="mt-5">
+                                <x-jet-secondary-button wire:click="updateTranscript" @click="open = false">
+                                    Update Transcript
+                                </x-jet-secondary-button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @else
+                    <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">Upload Transcript (txt):</label>
+                        <div class="pl-3">
+                            <input wire:model="file" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('file') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+                @endif
 
             </div>
 

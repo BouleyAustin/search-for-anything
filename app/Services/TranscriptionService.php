@@ -5,20 +5,18 @@ namespace App\Services;
 
 use App\Models\Content;
 use App\Models\Transcription;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
 class TranscriptionService
 {
-    public static function getTranscriptionFromImport($contentId, $fileName)
+    public static function getTranscriptionFromImport($contentId, $imageUrl)
     {
-        $fileName = storage_path('app') . '/temp_transcripts/' . $fileName;
-        $fopen = fopen($fileName, 'r');
-        $fread = fread($fopen, filesize($fileName));
-        fclose($fopen);
+        $text = file_get_contents($imageUrl);
 
-        $fread = str_replace("\n", "", $fread);
-        $fread = str_replace("===", " ", $fread);
-        $split = preg_split("/(?=\[(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)\])/", $fread);
+        $text = str_replace("\n", "", $text);
+        $text = str_replace("===", " ", $text);
+        $split = preg_split("/(?=\[(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)\])/", $text);
 
         if($content = Content::where('id', $contentId)->first()){
             foreach($split as $section){

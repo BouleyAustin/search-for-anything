@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Content;
 use App\Services\TranscriptionService;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -21,7 +22,7 @@ class CreateContent extends Component
     protected $rules = [
         'content.name' => 'required|string',
         'content.type' => 'required',
-        'content.file' => 'required|mimes:txt',
+        'content.file' => 'sometimes|nullable|mimes:txt',
         'content.podcast_link' => 'required|url',
     ];
 
@@ -58,10 +59,10 @@ class CreateContent extends Component
         $newContent->url_ending = str_replace(' ', '-', $this->content['name']) . $newContent->id;
         Auth::user()->pages()->first()->contents()->save($newContent);
 
-        $this->content['file']->store('temp_transcripts');
-        $fileName = $this->content['file']->hashName();
+        $file = $this->content['file']->store('txt');
+        $image_url = Storage::url($file);
 
-        TranscriptionService::getTranscriptionFromImport($newContent->id, $fileName);
+        TranscriptionService::getTranscriptionFromImport($newContent->id, $image_url);
 
         return redirect(URL::previous());
     }

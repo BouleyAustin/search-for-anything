@@ -4,15 +4,20 @@ namespace App\Http\Livewire;
 
 use App\Models\Content;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class CallToAction extends Component
 {
+    use WithFileUploads;
+
     public $isCreating;
     public $isEditing;
     public $callToActions;
     public $callToAction = [];
+    public $editPhoto;
 
     protected $rules = [
         'callToAction.name' => 'required|string',
@@ -20,6 +25,7 @@ class CallToAction extends Component
         'callToAction.sub_title' => 'required|string',
         'callToAction.button_text' => 'required|string',
         'callToAction.button_url' => 'required|url',
+        'callToAction.image_url' => 'required|image|max:2048',
     ];
 
     public function mount()
@@ -34,13 +40,14 @@ class CallToAction extends Component
             'button_text' => null,
             'button_url' => null,
             'image_url' => null,
-            'file' => null,
         ];
+        $this->editPhoto = null;
     }
 
     public function saveCreating()
     {
         $this->validate();
+        $file = $this->callToAction['image_url']->store('images');
 
         $newCTA = new \App\Models\CallToAction();
         $newCTA->name = $this->callToAction['name'];
@@ -48,6 +55,7 @@ class CallToAction extends Component
         $newCTA->sub_title = $this->callToAction['sub_title'];
         $newCTA->button_text = $this->callToAction['button_text'];
         $newCTA->button_url = $this->callToAction['button_url'];
+        $newCTA->image_url = Storage::url($file);
         Auth::user()->pages()->first()->callToAction()->save($newCTA);
 
         $this->mount();
@@ -61,7 +69,14 @@ class CallToAction extends Component
 
     public function saveEditing()
     {
-        $this->validate();
+        $this->validate([
+            'callToAction.name' => 'required|string',
+            'callToAction.title' => 'required|string',
+            'callToAction.sub_title' => 'required|string',
+            'callToAction.button_text' => 'required|string',
+            'callToAction.button_url' => 'required|url',
+            'editPhoto' => 'sometimes|nullable|image|max:2048',
+        ]);
 
         $updateCTA = \App\Models\CallToAction::where('id', $this->callToAction['id'])->first();
         $updateCTA->name = $this->callToAction['name'];
@@ -69,6 +84,13 @@ class CallToAction extends Component
         $updateCTA->sub_title = $this->callToAction['sub_title'];
         $updateCTA->button_text = $this->callToAction['button_text'];
         $updateCTA->button_url = $this->callToAction['button_url'];
+
+        if($this->editPhoto != null){
+            $file = $this->editPhoto->store('images');
+            $updateCTA->image_url = Storage::url($file);
+            Storage::delete($this->callToAction['image_url']);
+        }
+
         $updateCTA->save();
 
         $this->mount();

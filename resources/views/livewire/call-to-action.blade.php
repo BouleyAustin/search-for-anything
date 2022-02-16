@@ -11,7 +11,7 @@
                 <div class="flex flex-wrap justify-center items-center gap-3">
                     @if(count($callToActions))
                         @foreach($callToActions as $action)
-                            <div class="w-1/3 md:w-1/5 h-64 border rounded-md p-3 hover:bg-gray-50">
+                            <div class="w-1/3 md:w-1/5 border rounded-md p-3 hover:bg-gray-50">
                                 <div class="h-42 w-42">
                                     <img src="{{ $action['image_url'] ?? 'https://referralrock.com/blog/wp-content/uploads/2019/06/referral-call-to-action.jpg' }}"/>
                                 </div>
@@ -43,102 +43,104 @@
         </div>
     </div>
 
-    <x-jet-dialog-modal wire:model="isCreating">
-        <x-slot name="title">
-            Create A Call To Action
-        </x-slot>
+    @if($isCreating)
+        <x-jet-dialog-modal wire:model="isCreating">
+            <x-slot name="title">
+                Create A Call To Action
+            </x-slot>
 
-        <x-slot name="content">
+            <x-slot name="content">
 
-            <div class="mt-5">
-                <p class="mb-2">Preview:</p>
-                <div class="w-full">
-                    <div class="bg-white border border-gray-200 rounded sm:rounded-lg">
-                        <div class="p-6">
-                            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                                <div>
-                                    <img class="w-60 h-full" src="{{ $callToAction['image_url'] ?? '/logo.png' }}"/>
-                                </div>
-                                <div class="max-w-md">
-                                    <p class="text-2xl font-bold">{{ $callToAction['title'] ?? 'Temp Title'}}</p>
-                                    <p class="mt-2">{{ $callToAction['sub_title'] ?? 'Temp Sub Title' }}</p>
-                                    <div class="mt-5">
-                                        <a href="{{ $callToAction['button_url'] }}" target="_blank">
-                                            <x-jet-secondary-button>
-                                                {{ $callToAction['button_text'] ?? 'Place Holder' }}
-                                            </x-jet-secondary-button>
-                                        </a>
+                <div class="mt-5">
+                    <p class="mb-2">Preview:</p>
+                    <div class="w-full">
+                        <div class="bg-white border border-gray-200 rounded sm:rounded-lg">
+                            <div class="p-6">
+                                <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                                    <div>
+                                        <img class="w-60 h-full" src="{{ $callToAction['image_url'] ? $callToAction['image_url']->temporaryUrl() : '/logo.png' }}"/>
+                                    </div>
+                                    <div class="max-w-md">
+                                        <p class="text-2xl font-bold">{{ $callToAction['title'] ?? 'Temp Title'}}</p>
+                                        <p class="mt-2">{{ $callToAction['sub_title'] ?? 'Temp Sub Title' }}</p>
+                                        <div class="mt-5">
+                                            <a href="{{ $callToAction['button_url'] }}" target="_blank">
+                                                <x-jet-secondary-button>
+                                                    {{ $callToAction['button_text'] ?? 'Place Holder' }}
+                                                </x-jet-secondary-button>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="mt-10 mb-3">
+                <div class="mt-10 mb-3">
 
-                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">CTA Reference Name (your use only):</label>
-                    <div class="pl-3">
-                        <input wire:model="callToAction.name" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                        @error('callToAction.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">CTA Reference Name (your use only):</label>
+                        <div class="pl-3">
+                            <input wire:model="callToAction.name" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('callToAction.name') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
                     </div>
-                </div>
-                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">CTA Title:</label>
-                    <div class="pl-3">
-                        <input wire:model="callToAction.title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                        @error('callToAction.title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">CTA Title:</label>
+                        <div class="pl-3">
+                            <input wire:model="callToAction.title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('callToAction.title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
                     </div>
-                </div>
-                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">CTA Sub Title:</label>
-                    <div class="pl-3">
-                        <input wire:model="callToAction.sub_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                        @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">CTA Sub Title:</label>
+                        <div class="pl-3">
+                            <input wire:model="callToAction.sub_title" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
                     </div>
-                </div>
-                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">CTA Button Text:</label>
-                    <div class="pl-3">
-                        <input wire:model="callToAction.button_text" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                        @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">CTA Button Text:</label>
+                        <div class="pl-3">
+                            <input wire:model="callToAction.button_text" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
                     </div>
-                </div>
-                <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">CTA Button URL:</label>
-                    <div class="pl-3">
-                        <input wire:model="callToAction.button_url" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                        @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    <div class="mt-3 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">CTA Button URL:</label>
+                        <div class="pl-3">
+                            <input wire:model="callToAction.button_url" type="text" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('callToAction.sub_title') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
                     </div>
-                </div>
-                <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
-                    <label class="text-sm sm:text-md font-medium">Upload CTA Image:</label>
-                    <div class="pl-3">
-                        <input wire:model="callToAction.file" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                        @error('callToAction.file') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                    <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
+                        <label class="text-sm sm:text-md font-medium">Upload CTA Image:</label>
+                        <div class="pl-3">
+                            <input type="file" wire:model="callToAction.image_url" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                            @error('callToAction.image_url') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        </div>
                     </div>
+
                 </div>
 
-            </div>
+            </x-slot>
 
-        </x-slot>
-
-        <x-slot name="footer">
-            <div class="flex gap-1 items-center">
-                <x-jet-secondary-button wire:click="close" wire:loading.attr="disabled">
-                    {{ __('Close') }}
-                </x-jet-secondary-button>
-                <x-jet-secondary-button class="ml-2" wire:click="saveCreating" wire:loading.attr="disabled">
-                    {{ __('Create Call To Action') }}
-                </x-jet-secondary-button>
-                <div wire:loading wire:target="saveCreating">
-                    Loading...
+            <x-slot name="footer">
+                <div class="flex gap-1 items-center">
+                    <x-jet-secondary-button wire:click="close" wire:loading.attr="disabled">
+                        {{ __('Close') }}
+                    </x-jet-secondary-button>
+                    <x-jet-secondary-button class="ml-2" wire:click="saveCreating" wire:loading.attr="disabled">
+                        {{ __('Create Call To Action') }}
+                    </x-jet-secondary-button>
+                    <div wire:loading wire:target="saveCreating">
+                        Loading...
+                    </div>
                 </div>
-            </div>
-        </x-slot>
-    </x-jet-dialog-modal>
+            </x-slot>
+        </x-jet-dialog-modal>
+    @endif
 
     <x-jet-dialog-modal wire:model="isEditing">
         <x-slot name="title">
@@ -154,7 +156,7 @@
                         <div class="p-6">
                             <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
                                 <div>
-                                    <img class="w-96 h-full" src="{{ $callToAction['image_url'] }}"/>
+                                    <img class="w-96 h-full" src="{{ $this->editPhoto == null ? $callToAction['image_url'] : $this->editPhoto->temporaryUrl() }}"/>
                                 </div>
                                 <div class="max-w-md">
                                     <p class="text-2xl font-bold">{{ $callToAction['title'] }}</p>
@@ -213,8 +215,8 @@
                 <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
                     <label class="text-sm sm:text-md font-medium">Upload CTA Image:</label>
                     <div class="pl-3">
-                        <input wire:model="callToAction.file" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
-                        @error('callToAction.file') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                        <input wire:model="editPhoto" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-60 sm:text-sm border-gray-300 rounded-md">
+                        @error('editPhoto') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
                     </div>
                 </div>
 

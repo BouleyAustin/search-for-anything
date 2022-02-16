@@ -241,10 +241,16 @@
                     </div>
                     <div class="mt-5 overflow-hidden rounded-lg flex items-center justify-left">
                         <label class="text-sm sm:text-md font-medium">Favicon Image:</label>
-                        <div class="pl-3">
-                            <input wire:model="pageDetails.favicon_url" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
-                            @error('pageDetails.favicon_url') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
-                        </div>
+                        @if($pageDetails['favicon_url'] == null)
+                            <div class="pl-3">
+                                <input wire:model="pageDetails.favicon_url" type="file" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500 block w-52 sm:text-sm border-gray-300 rounded-md">
+                                @error('pageDetails.favicon_url') <span class="mt-2 text-xs font-medium text-red-500">{{ $message }}</span> @enderror
+                            </div>
+                        @else
+                            <div class="pl-3">
+                                <img src="{{ $pageDetails['favicon_url'] }}" class="h-6 w-6"/>
+                            </div>
+                        @endif
                     </div>
                 </div>
 
