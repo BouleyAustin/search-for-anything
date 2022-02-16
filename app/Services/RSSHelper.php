@@ -15,6 +15,7 @@ class RSSHelper
         $rssFeed = FeedReader::read('https://anchor.fm/s/6f67013c/podcast/rss')->get_items();
 
         $page = Page::where('id', $pageId)->first();
+        $imageUrl = '';
 
         foreach($rssFeed as $item){
             $title = $item->get_title();
@@ -27,7 +28,10 @@ class RSSHelper
             if(!Content::where('podcast_link', $hostLink)->first()){
                 $newContent = new Content();
 
-                $urlEnding = str_replace(' ', '-', $title);
+                $urlEnding = str_replace('|', '-', $title);
+                $urlEnding = str_replace('-', '', $urlEnding);
+                $urlEnding = preg_replace('/\s+/', ' ',$urlEnding);
+                $urlEnding = str_replace(' ', '-', $urlEnding);
 
                 if(Content::where('url_ending', $urlEnding)->first()){
                     $urlEnding = $urlEnding . '-' . rand(0,10);
@@ -44,5 +48,8 @@ class RSSHelper
                 $page->contents()->save($newContent);
             }
         }
+
+        $page->link_home = $imageUrl;
+        $page->save();
     }
 }

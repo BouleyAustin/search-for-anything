@@ -67,4 +67,13 @@ class HomeController extends Controller
     {
         return view('content');
     }
+
+    public static function showSiteMap()
+    {
+        $urls = SearchService::getLinksForSiteMap();
+
+        return response()->view('site-map', [
+            'urls' => $urls
+        ])->header('Content-Type', 'text/xml');
+    }
 }

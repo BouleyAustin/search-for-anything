@@ -31,6 +31,9 @@ Route::get('/home', function () {
     return view('landing');
 })->name('home');
 
+Route::get('/sitemap.xml', '\App\Http\Controllers\HomeController@showSiteMap')
+    ->name('site-map');
+
 Route::get('/{name}', '\App\Http\Controllers\HomeController@showSearchPage')
     ->middleware(['pageview'])
     ->name('search-page');

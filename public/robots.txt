@@ -1,2 +1,4 @@
+Sitemap: https://searchpod.io/sitemap.xml
+
 User-agent: *
 Disallow:

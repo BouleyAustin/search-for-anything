@@ -62,4 +62,48 @@ class SearchService
             return 'https://anchor.fm/theimpeccableinvestor/embed/episodes/Understanding-The-Fear-And-Greed-Index-e1dpjnh';
         }
     }
+
+    public static function getLinksForSiteMap()
+    {
+        $urls = [];
+        $pages = Page::all();
+
+        foreach($pages as $page){
+            $url = $page->url_ending;
+            $mod = $page->updated_at->tz('UTC')->toAtomString();
+            $freq = 'daily';
+            $priority = 1;
+
+            array_push($urls, [
+                'url' => $url,
+                'mod' => $mod,
+                'freq' => $freq,
+                'priority' => $priority,
+            ]);
+
+            array_push($urls, [
+                'url' => $url . '/episodes',
+                'mod' => $mod,
+                'freq' => $freq,
+                'priority' => .75,
+            ]);
+
+            $contents = Content::where('page_id', $page->id)->get();
+            foreach($contents as $content){
+                $contentUrl = $url . '/episodes/' . $content->url_ending;
+                $mod = $content->updated_at->tz('UTC')->toAtomString();
+                $freq = 'weekly';
+                $priority = .5;
+
+                array_push($urls, [
+                    'url' => $contentUrl,
+                    'mod' => $mod,
+                    'freq' => $freq,
+                    'priority' => $priority,
+                ]);
+            }
+        }
+
+        return $urls;
+    }
 }
