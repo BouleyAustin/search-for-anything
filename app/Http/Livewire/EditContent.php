@@ -52,6 +52,11 @@ class EditContent extends Component
         $updateContent->video_link = $this->content['video_link'];
         $updateContent->show_cta = $this->content['show_cta'];
         $updateContent->cta_id = $this->content['cta_id'];
+        $updateContent->apple_link = $this->content['apple_link'];
+        $updateContent->spotify_link = $this->content['spotify_link'];
+        $updateContent->meta_description = $this->content['meta_description'];
+        $updateContent->meta_title = $this->content['meta_title'];
+        $updateContent->meta_keywords = $this->content['meta_keywords'];
         $updateContent->save();
 
         $this->isViewing = false;

@@ -39,7 +39,8 @@ class HomeController extends Controller
                 $content = $content->toArray();
                 $transcript = Transcription::where('content_id', $content['id'])->get()->toArray();
 
-                $embedLink = SearchService::getEmbedLink($content['podcast_link']);
+                $link = $content['apple_link'] == null ? $content['podcast_link'] : $content['apple_link'];
+                $embedLink = SearchService::getEmbedLink($link);
 
                 return view('episode-page', [
                     'pageDetails' => $pageDetails,
