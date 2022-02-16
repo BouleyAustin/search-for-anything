@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>SearchForAnything.io App</title>
+        <title>SearchPod.io App</title>
         <meta name="keywords" content="podcast automation, podcast search engine, podcast seo, podcast seo automation, podcast growth, podcast seo software, podcast software">
         <meta name="description" content="Turn your podcast into your biggest marketing asset in seconds! SearchForAnything.io increases your SEO presence, downloads, and conversion rates automatically!">
         <meta name="robots" content="index, follow" />

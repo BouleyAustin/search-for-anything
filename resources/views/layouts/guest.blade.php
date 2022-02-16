@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>SearchForAnything.io</title>
-        <meta name="keywords" content="podcast automation, podcast search engine, podcast seo, podcast seo automation, podcast growth, podcast seo software, podcast software">
-        <meta name="description" content="Turn your podcast into your biggest marketing asset in seconds! SearchForAnything.io increases your SEO presence, downloads, and conversion rates automatically!">
+        <title>SearchPod.io</title>
+        <meta name="keywords" content="podcast automation, podcast search engine, podcast seo, podcast seo automation, podcast growth, podcast seo software, podcast software, podcast seo landing page, podcast episode seo, podcast episode page">
+        <meta name="description" content="Turn your podcast into your biggest marketing asset in seconds! Increase your SEO presence, downloads, and conversion rates automatically without any extra work!">
         <meta name="robots" content="index, follow" />
 
         <link rel = "icon" href =

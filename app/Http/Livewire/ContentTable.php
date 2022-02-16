@@ -24,7 +24,7 @@ class ContentTable extends Component
     public function render()
     {
         $page = Auth::user()->pages()->first();
-        $contents = Content::where('page_id', $page['id'])->paginate(12);
+        $contents = Content::where('page_id', $page['id'])->paginate(10);
 
         return view('livewire.content-table', [
             'contents' => $contents,

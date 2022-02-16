@@ -3,18 +3,18 @@
         <p>{{ $pageName }}'s Content</p>
         <livewire:create-content/>
     </div>
-    <div class="flex flex-wrap gap-3 justify-between items-center">
+    <div class="flex flex-wrap gap-3 justify-center items-center">
         @if(count($contents))
             @foreach($contents as $content)
-                <div class="w-1/3 md:w-1/5 border rounded-md p-3 hover:bg-gray-50">
+                <div class="w-52 border rounded-md p-3 hover:bg-gray-50">
                     <div class="h-42 w-42">
                         <img src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg"/>
                     </div>
-                    <div class="mt-2 text-center">
-                        <p>{{ substr($content->title, 0, 35) }}</p>
+                    <div class="mt-2 text-center text-wrap">
+                        <p>{{ substr($content->title, 0, 30) }}...</p>
                     </div>
                     <div class="mt-2 flex flex-col md:flex-row justify-center items-center gap-2">
-                        <livewire:edit-content :contentId="$content['id']"/>
+                        <livewire:edit-content :contentId="$content->id" :wire:key="$content->id"/>
 
                         <a href="{{ '/' . $pageUrl . '/' . $content->url_ending }}" target="_blank">
                             <x-jet-secondary-button>
