@@ -68,10 +68,6 @@ class OnboardingChecklist extends Component
             'favoritePodcasts.spotify' => 'sometimes|nullable|url',
             'favoritePodcasts.google' => 'sometimes|nullable|url',
             'favoritePodcasts.overcast' => 'sometimes|nullable|url',
-            'favoritePodcasts.breaker' => 'sometimes|nullable|url',
-            'favoritePodcasts.castbox' => 'sometimes|nullable|url',
-            'favoritePodcasts.pocketcasts' => 'sometimes|nullable|url',
-            'favoritePodcasts.radiopublic' => 'sometimes|nullable|url',
             'favoritePodcasts.stitcher' => 'sometimes|nullable|url',
         ]);
 
@@ -80,10 +76,6 @@ class OnboardingChecklist extends Component
         $page->spotify_link = $this->favoritePodcasts['spotify'];
         $page->google_link = $this->favoritePodcasts['google'];
         $page->overcast_link = $this->favoritePodcasts['overcast'];
-        $page->breaker_link = $this->favoritePodcasts['breaker'];
-        $page->castbox_link = $this->favoritePodcasts['castbox'];
-        $page->pocketcasts_link = $this->favoritePodcasts['pocketcasts'];
-        $page->radiopublic_link = $this->favoritePodcasts['radiopublic'];
         $page->stitcher_link = $this->favoritePodcasts['stitcher'];
         $page->save();
 
