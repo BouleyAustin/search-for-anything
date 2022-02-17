@@ -48,7 +48,7 @@
             <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl rounded sm:rounded-lg">
                     <div class="p-5">
-                        <p class="mt-5 text-center text-2xl sm:text-3xl text-black">{{ $content['title'] }}</p>
+                        <p class="mt-5 text-center text-xl sm:text-3xl text-black">{{ $content['title'] }}</p>
                         <div class="mt-10 flex justify-center">
                             <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="{{ $embedLink }}"></iframe>
                         </div>
@@ -63,11 +63,31 @@
                         <div class="mt-12 mb-5 text-sm text-center text-black">
                             <p>Listen on other platforms</p>
                             <div class="mt-5 flex justify-center items-center gap-3">
-                                <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts@2x.png 2x" alt="Apple Podcasts Logo" height="36" width="36">
-                                <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/google_podcasts.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/google_podcasts.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/google_podcasts@2x.png 2x" alt="Google Podcasts Logo" height="36" width="36">
-                                <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/pocket_casts.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/pocket_casts.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/pocket_casts@2x.png 2x" alt="Pocket Casts Logo" height="36" width="36">
-                                <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/spotify.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/spotify.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/spotify@2x.png 2x" alt="Spotify Logo" height="36" width="36">
-                                <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/stitcher_dark.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/stitcher_dark.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/stitcher_dark@2x.png 2x" alt="Stitcher Logo" height="36" width="36">
+                                @if($pageDetails['apple_link'] != null)
+                                    <a href="{{ $pageDetails['apple_link'] }}" target="_blank">
+                                        <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/apple_podcasts@2x.png 2x" alt="Apple Podcasts Logo" height="36" width="36">
+                                    </a>
+                                @endif
+                                @if($pageDetails['spotify_link'] != null)
+                                    <a href="{{ $pageDetails['spotify_link'] }}" target="_blank">
+                                        <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/spotify.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/spotify.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/spotify@2x.png 2x" alt="Spotify Logo" height="36" width="36">
+                                    </a>
+                                @endif
+                                @if($pageDetails['google_link'] != null)
+                                    <a href="{{ $pageDetails['google_link'] }}" target="_blank">
+                                        <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/google_podcasts.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/google_podcasts.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/google_podcasts@2x.png 2x" alt="Google Podcasts Logo" height="36" width="36">
+                                    </a>
+                                @endif
+                                @if($pageDetails['stitcher_link'] != null)
+                                    <a href="{{ $pageDetails['stitcher_link'] }}" target="_blank">
+                                        <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/stitcher_dark.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/stitcher_dark.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/stitcher_dark@2x.png 2x" alt="Stitcher Logo" height="36" width="36">
+                                    </a>
+                                @endif
+                                @if($pageDetails['overcast_link'] != null)
+                                    <a href="{{ $pageDetails['overcast_link'] }}" target="_blank">
+                                        <img src="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/pocket_casts.png" srcset="https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/pocket_casts.png 1x, https://d12xoj7p9moygp.cloudfront.net/images/podcast/logo-square/006/pocket_casts@2x.png 2x" alt="Pocket Casts Logo" height="36" width="36">
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -94,7 +114,7 @@
                                 <p class="mt-5 text-xl">Transcript:</p>
                                 <div class="mt-5 mb-5 max-w-5xl text-md text-center mx-auto sm:px-6 lg:px-8">
                                     @foreach($transcript as $item)
-                                        <p class="mt-3">{{ $item['sentence'] }}</p>
+                                        <p class="mt-3 text-sm sm:text-md">{{ $item['sentence'] }}</p>
                                     @endforeach
                                 </div>
                             </div>
@@ -108,7 +128,7 @@
     <footer class="mb-10 {{ count($transcript) ? '' : 'mt-36' }}">
         <div class="text-center {{ $pageDetails['text_color'] != null ? ($pageDetails['text_color'] == 'black' ? 'text-black' : 'text-white') : '' }}">
             <div class="mb-5">
-                <a href="{{ route('landing') }}"><p class="hover:underline">Want To Automate Your Own Podcast? Click Here!</p></a>
+                <a href="{{ route('landing') }}"><p class="hover:underline text-sm sm:text-md">Want To Automate Your Own Podcast? Click Here!</p></a>
             </div>
             <div class="flex gap-4 justify-center items-center text-gray-400">
                 <div>

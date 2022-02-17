@@ -30,7 +30,7 @@
     </head>
     <main class="flex-grow">
         <div class="mb-5 font-sans text-gray-900 antialiased">
-            <div class="mt-48">
+            <div class="mt-24 sm:mt-48">
                 <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
                     <div class="text-center">
                         <p class="font-sans font-black text-2xl sm:text-3xl {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">{{ $pageDetails['search_title'] ?? 'The ' . $pageDetails['name'] . ' Search Engine' }}</p>
@@ -48,7 +48,7 @@
     <footer class="mb-10">
         <div class="text-center {{ $pageDetails['text_color'] != null ? 'text-' . $pageDetails['text_color'] : '' }}">
             <div class="mb-5">
-                <a href="{{ route('landing') }}"><p class="hover:underline">Want Your Own Search Engine? Click Here!</p></a>
+                <a href="{{ route('landing') }}"><p class="hover:underline text-sm sm:text-base">Want Your Own Search Engine? Click Here!</p></a>
             </div>
             <div class="flex gap-4 justify-center items-center text-gray-400">
                 <div>

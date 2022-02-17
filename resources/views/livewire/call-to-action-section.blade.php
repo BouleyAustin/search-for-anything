@@ -4,11 +4,11 @@
             <div class="p-6">
                 <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
                     <div>
-                        <img class="w-96 h-full" src="{{ $callToAction['image_url'] }}"/>
+                        <img class="w-full sm:w-80 h-auto" src="{{ $callToAction['image_url'] }}"/>
                     </div>
                     <div class="max-w-md">
-                        <p class="text-2xl font-bold">{{ $callToAction['title'] }}</p>
-                        <p class="mt-2">{{ $callToAction['sub_title'] }}</p>
+                        <p class="text-xl sm:text-2xl font-bold">{{ $callToAction['title'] }}</p>
+                        <p class="mt-2 text-sm sm:text-md">{{ $callToAction['sub_title'] }}</p>
                         <div class="mt-5">
                             <a wire:click="recordCTAClick" href="{{ $callToAction['button_url'] }}" target="_blank">
                                 <x-jet-secondary-button>
