@@ -25,6 +25,8 @@
 
                             <a href="#behind-the-scenes" class="font-medium text-gray-500 hover:text-gray-900">Behind The Scenes</a>
 
+                            <a href="#pricing" class="font-medium text-gray-500 hover:text-gray-900">Pricing</a>
+
                             <a href="#faq" class="font-medium text-gray-500 hover:text-gray-900">FAQ</a>
                         </div>
                     </div>
@@ -52,7 +54,7 @@
                         </div>
                         <div class="mt-6">
                             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">Struggling to grow your podcast?</h2>
-                            <p class="mt-4 text-lg text-gray-500">Our software will automatically create a podcast website with dedicated episodes pages for each episode you have and submit your site to Google so they can start including your podcast in search results! We also transcribe your episodes and include the transcripts on the episode pages to massively increase your SEO presence!</p>
+                            <p class="mt-4 text-lg text-gray-500">All you need to do is add your RSS feed and we take care of the rest: a podcast page, dedicated episode pages, add transcripts, optimize for mobile and SEO, submit to Google and more!</p>
                             <div class="mt-6">
                                 <a href="{{ route('register') }}" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"> Get started </a>
                             </div>
@@ -87,15 +89,12 @@
                     <div>
                         <div>
                             <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
-                              <!-- Heroicon name: outline/sparkles -->
-                              <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                              </svg>
+                              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                             </span>
                         </div>
                         <div class="mt-6">
                             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">Having a hard time monetizing your podcast?</h2>
-                            <p class="mt-4 text-lg text-gray-500">The #1 way to monetize your podcast is to sell your own products, services and promote affiliate offers which you can easily do with SearchPod.io! We specifically designed the episode pages after high converting landing pages. You can also use this call to action section to encourage your listeners to leave a review or join your facebook group!</p>
+                            <p class="mt-4 text-lg text-gray-500">You can easily add a call to action section to any episode page! This way you can promote your own services, products, affiliate offers, free opt-ins, ask for a review and more!</p>
                             <div class="mt-6">
                                 <a href="{{ route('register') }}" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"> Get started </a>
                             </div>
@@ -120,7 +119,7 @@
                         </div>
                         <div class="mt-6">
                             <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">Ever run out of ideas for episodes?</h2>
-                            <p class="mt-4 text-lg text-gray-500">SearchPod.io's biggest selling feature is that it will automatically transcribe your podcasts and allow your listens to search your episodes to find exactly what they need! When you have your own search engine, you can also see common and frequent searches which will allow you to know what your listeners want to learn!</p>
+                            <p class="mt-4 text-lg text-gray-500">By having your own search engine, you can see what your listeners want to hear from you and see which episode has the highest conversion rate for your service, product, etc so you know what to make more of!</p>
                             <div class="mt-6">
                                 <a href="{{ route('register') }}" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"> Get started </a>
                             </div>
@@ -145,6 +144,146 @@
                 <div class="mt-12 sm:mt-16 lg:mt-0">
                     <div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                         <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="analytics-page.png" alt="Inbox user interface">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="behind-the-scenes" class="relative bg-white py-8 sm:py-8 lg:py-12">
+        <div class="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl">
+            <h2 class="text-base font-semibold tracking-wider text-indigo-600 uppercase">Everything You Need</h2>
+            <p class="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">See what happens behind the scenes</p>
+            <p class="mt-5 max-w-prose mx-auto text-xl text-gray-500">All you do is connect your RSS feed and we do the rest!</p>
+            <div class="mt-12">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                        <p class="text-white font-bold">#1</p>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Record And Upload (like normal)</h3>
+                                <div class="mt-3">
+                                    <img src="/step-1.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                        <p class="text-white font-bold">#2</p>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">We Monitor Your Podcast</h3>
+                                <div class="mt-3">
+                                    <img src="/step-2.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                        <p class="text-white font-bold">#3</p>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">We Transcribe The New Episodes</h3>
+                                <div class="mt-3">
+                                    <img src="/step-3.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                        <p class="text-white font-bold">#4</p>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">We Create A Dedicate Episode Page</h3>
+                                <div class="mt-3">
+                                    <img src="/step-4.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                        <p class="text-white font-bold">#5</p>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">We Optimize For SEO and Mobile</h3>
+                                <div class="mt-3">
+                                    <img src="/step-5.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                        <p class="text-white font-bold">#6</p>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Now You Have A Successful And Growing Podcast</h3>
+                                <div class="mt-3">
+                                    <img src="/step-6.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="examples" class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Podcasters using SearchPod.io</h2>
+                    <p class="mt-3 max-w-3xl text-lg text-gray-500">These podcasters see the potential of SearchPod.io exclusive podcast search engine and SEO automation! You'll be able to check out their search engine once they are fully setup.</p>
+                    <div class="mt-8 sm:flex">
+                        <div class="rounded-md shadow">
+                            <a href="{{ route('register') }}" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Join BETA Access</a>
+                        </div>
+                        <div class="mt-3 sm:mt-0 sm:ml-3">
+                            <a href="#explanation" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
+                    <div class="col-span-1 py-8 px-8 bg-gray-50">
+                        <img class="w-full h-full" src="https://is4-ssl.mzstatic.com/image/thumb/Podcasts125/v4/3f/b1/7e/3fb17e9c-37ec-edf3-3e9a-3f8923d07023/mza_3029821249158272722.jpg/313x0w.webp"/>
+                    </div>
+                    <div class="col-span-1 py-8 px-8 bg-gray-50">
+                        <img class="w-full h-full" src="https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/12538696/12538696-1618504756926-070271af10e81.jpg"/>
+                    </div>
+                    <div class="col-span-1 py-8 px-8 bg-gray-50">
+                        <img class="w-full h-full" src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts124/v4/23/9e/6a/239e6a8f-70c2-3c4c-05a3-8c39b6252e9d/mza_16524585751342588571.jpg/313x0w.webp"/>
+                    </div>
+                    <div class="col-span-1 py-8 px-8 bg-gray-50">
+                        <img class="w-full h-full" src="https://storage.buzzsprout.com/variants/4kstv9uwa7gxbiu7x2kd883j9rx8/b49cbe86cb411762753e730c58953bb88ad958a9d657212c074729b6f04e5463.jpg"/>
                     </div>
                 </div>
             </div>
@@ -251,37 +390,107 @@
         </div>
     </div>
 
-    <div id="examples" class="bg-white">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
-            <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Podcasters coming to SearchPod.io soon!</h2>
-                    <p class="mt-3 max-w-3xl text-lg text-gray-500">These podcasters see the potential of SearchPod.io exclusive podcast search engine and SEO automation! You'll be able to check out their search engine once they are setup.</p>
-                    <div class="mt-8 sm:flex">
-                        <div class="rounded-md shadow">
-                            <a href="{{ route('register') }}" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Join BETA Access</a>
-                        </div>
-                        <div class="mt-3 sm:mt-0 sm:ml-3">
-                            <a href="#explanation" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">Learn More</a>
-                        </div>
-                    </div>
+    <div id="pricing" class="bg-gray-white">
+        <div class="pt-12 sm:pt-16 lg:pt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">Simple no-tricks pricing</h2>
+                    <p class="mt-4 text-xl text-gray-600">If you're not satisfied, contact us within the first 14 days and we'll send you a full refund.</p>
                 </div>
-                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <p class="text-lg text-gray-900 font-bold">The Impeccable Investor</p>
-                        <p class="text-sm mt-2 text-gray-600">50k podcast downloads, 240K on Instagram</p>
-                    </div>
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <p class="text-lg text-gray-900 font-bold">The Lily Kate Show</p>
-                        <p class="text-sm mt-2 text-gray-600">30K podcast downloads, 45K on Instagram</p>
-                    </div>
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <p class="text-lg text-gray-900 font-bold">Church Project North County</p>
-                        <p class="text-sm mt-2 text-gray-600">30K podcast downloads, 1K on Instagram</p>
-                    </div>
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <p class="text-lg text-gray-900 font-bold">YOU?</p>
-                        <p class="text-sm mt-2 text-gray-600">Join BETA access! You'll also be able to be included in our podcast marketplace :)</p>
+            </div>
+        </div>
+        <div class="mt-8 bg-white pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
+            <div class="relative bg-white">
+                <div class="absolute inset-0 h-1/2"></div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-lg mx-auto rounded-lg shadow-xl overflow-hidden lg:max-w-none lg:flex">
+                        <div class="flex-1 bg-white px-6 py-8 lg:p-12">
+                            <h3 class="text-2xl font-extrabold text-gray-900 sm:text-3xl">Founding Member Access</h3>
+                            <p class="mt-6 text-base text-gray-500">Everything you need to grow and monetize your podcast automatically! You will also lock in this cheap price for life and get direct access to founder to help him improve the software!</p>
+                            <div class="mt-8">
+                                <div class="flex items-center">
+                                    <h4 class="flex-shrink-0 pr-4 bg-white text-sm tracking-wider font-semibold uppercase text-indigo-600">What's included</h4>
+                                    <div class="flex-1 border-t-2 border-gray-200"></div>
+                                </div>
+                                <ul role="list" class="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5">
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <!-- Heroicon name: solid/check-circle -->
+                                            <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">Access To SearchPod.io Software</p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <!-- Heroicon name: solid/check-circle -->
+                                            <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">5 FREE Hours Of Transcription / Month</p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <!-- Heroicon name: solid/check-circle -->
+                                            <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">15 FREE Hours Of Transcription For Setup</p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <!-- Heroicon name: solid/check-circle -->
+                                            <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">Monthly Calls And Direct Access To The Team</p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <!-- Heroicon name: solid/check-circle -->
+                                            <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">Website Hosting Provided</p>
+                                    </li>
+
+                                    <li class="flex items-start lg:col-span-1">
+                                        <div class="flex-shrink-0">
+                                            <!-- Heroicon name: solid/check-circle -->
+                                            <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <p class="ml-3 text-sm text-gray-700">Basic Integrations (email, tracking, etc)</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="py-8 px-6 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+                            <p class="text-lg leading-6 font-medium text-gray-900">Monthly plan</p>
+                            <div class="mt-4 flex items-center justify-center text-5xl font-extrabold text-gray-900">
+                                <span> $20 </span>
+                                <span class="ml-3 text-xl font-medium text-gray-500"> USD </span>
+                            </div>
+                            <div class="mt-6">
+                                <div class="rounded-md shadow">
+                                    <a href="{{ route('register') }}" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-900"> Get Access </a>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-sm">
+                                <p> This is the best deal ever... </p>
+                                <p> We're practically losing money at this price. </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -334,156 +543,12 @@
                         <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <p class="ml-9 text-lg leading-6 font-medium text-gray-900">Simple To Use</p>
-                    </dt>
-                    <dd class="mt-2 ml-9 text-base text-gray-500">Very simple and intuitive software so you can spend less time on tedious and annoying backend work and more time on recording your episodes.</dd>
-                </div>
-
-                <div class="relative">
-                    <dt>
-                        <!-- Heroicon name: outline/check -->
-                        <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                        </svg>
                         <p class="ml-9 text-lg leading-6 font-medium text-gray-900">YouTube Video Embed</p>
                     </dt>
                     <dd class="mt-2 ml-9 text-base text-gray-500">If you also have a video recording for your podcast episode, you can easily include that on your dedicate podcast episode page!<dd>
                 </div>
 
-                <div class="relative">
-                    <dt>
-                        <!-- Heroicon name: outline/check -->
-                        <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <p class="ml-9 text-lg leading-6 font-medium text-gray-900">Reviews [COMING SOON]</p>
-                    </dt>
-                    <dd class="mt-2 ml-9 text-base text-gray-500">Create a reviews page that will pull your reviews from Apple and allow people without Apple podcasts to leave reviews too!</dd>
-                </div>
-
-                <div class="relative">
-                    <dt>
-                        <!-- Heroicon name: outline/check -->
-                        <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <p class="ml-9 text-lg leading-6 font-medium text-gray-900">Social Scheduling [COMING SOON]</p>
-                    </dt>
-                    <dd class="mt-2 ml-9 text-base text-gray-500">Post about your new podcast on social media automatically by integrating with Headliner!</dd>
-                </div>
-
-                <div class="relative">
-                    <dt>
-                        <!-- Heroicon name: outline/check -->
-                        <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <p class="ml-9 text-lg leading-6 font-medium text-gray-900">Host Scheduling [COMING SOON]</p>
-                    </dt>
-                    <dd class="mt-2 ml-9 text-base text-gray-500">Allow people to sign up to be on your podcast so you can manage your interviews and podcast all in one place.</dd>
-                </div>
             </dl>
-        </div>
-    </div>
-
-    <div id="behind-the-scenes" class="bg-white">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
-            <div>
-                <h2 class="text-base font-semibold text-indigo-600 uppercase tracking-wide">Everything you need</h2>
-                <p class="mt-2 text-3xl font-extrabold text-gray-900">See what happens behind the scenes</p>
-                <p class="mt-4 text-lg text-gray-500">Turn your podcast into your biggest marketing asset through a search engine and SEO automation.</p>
-            </div>
-            <div class="mt-12 lg:mt-0 lg:col-span-2">
-                <dl class="space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:grid-rows-4 sm:grid-flow-col sm:gap-x-6 sm:gap-y-10 lg:gap-x-8">
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #1: You Do You!</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">You record, edit and upload your podcast to your host as usual. Now, sit back and let our software do the rest!</dd>
-                    </div>
-
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #2: Create Your Search Engine</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will create a custom search engine for your podcast to help your listeners find episodes and increase your downloads.</dd>
-                    </div>
-
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #3: Monitor Your Podcast</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will automatically monitor your podcast to track when a new episode comes out without you needing to tell us.</dd>
-                    </div>
-
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #4: Transcribe New Episodes</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software uses one of the most cutting edge and advanced AI models to accurately transcribe your episode into text.</dd>
-                    </div>
-
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #4: Add New Episode To Your Search Engine</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will take the new episode and transcript and add it to your personal search engine database.</dd>
-                    </div>
-
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #5: Create A Dedicate Episode Page</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will create a dedicated episode page with the transcript to help your show be found on Google and increase your SEO ratings.</dd>
-                    </div>
-
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #6: Give You Analytics On What Content To Make</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">Our software will share what your listeners are searching for on your search engine to help you make content they actually want.</dd>
-                    </div>
-
-                    <div class="relative">
-                        <dt>
-                            <!-- Heroicon name: outline/check -->
-                            <svg class="absolute h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                            <p class="ml-9 text-lg leading-6 font-bold text-gray-900">STEP #7: YOU NOW HAVE A GROWING AND SUCCESSFUL PODCAST</p>
-                        </dt>
-                        <dd class="mt-2 ml-9 text-base text-gray-500">You are now growing your podcast by focusing on creating amazing content and letting SearchPod.io handle the rest!</dd>
-                    </div>
-                </dl>
-            </div>
         </div>
     </div>
 

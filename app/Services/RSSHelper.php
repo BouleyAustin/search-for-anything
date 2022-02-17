@@ -30,6 +30,7 @@ class RSSHelper
 
                 $urlEnding = str_replace('|', '-', $title);
                 $urlEnding = str_replace('-', '', $urlEnding);
+                $urlEnding = str_replace('+', '', $urlEnding);
                 $urlEnding = str_replace('[', '', $urlEnding);
                 $urlEnding = str_replace(']', '', $urlEnding);
                 $urlEnding = str_replace('(', '', $urlEnding);
