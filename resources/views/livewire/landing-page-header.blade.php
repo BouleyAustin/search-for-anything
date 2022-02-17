@@ -50,7 +50,7 @@
         <x-slot name="content">
 
             <div class="mt-4">
-                <div style="padding:56.6% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/OR8kkqkmpjA" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+                <div style="padding:56.6% 0 0 0;position:relative;"><iframe src="https://youtube.com/embed/nJpM-TRFTYc" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
             </div>
 
         </x-slot>
