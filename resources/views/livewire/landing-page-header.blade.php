@@ -4,7 +4,7 @@
             <div class="text-center md:max-w-4xl md:mx-auto">
                 <h1>
                     <span class="mt-1 block text-3xl tracking-tight font-extrabold sm:text-4xl md:text-5xl">
-                      <span class="block text-gray-900">Skyrocket Your Podcast Ranking On Google And Increase Conversions In Less Than 3 Minutes, Automatically</span>
+                      <span class="block text-gray-900">Skyrocket Your Podcast Ranking On Google And Increase Downloads In Less Than 3 Minutes, Automatically</span>
                         <!-- Create A Podcast Website And Rank On Google In Less Than 1 Minute -->
                     </span>
                 </h1>

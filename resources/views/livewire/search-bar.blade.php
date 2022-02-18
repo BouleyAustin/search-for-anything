@@ -32,7 +32,7 @@
         @endif
 
         @if(count($searchResults) > 0)
-            <div class="mt-5 mb-24 flex overflow-hidden justify-center items-center flex-wrap gap-5">
+            <div class="mt-5 mb-5 flex overflow-hidden justify-center items-center flex-wrap gap-5">
                 @foreach($searchResults as $result)
                     <div class="bg-white rounded-lg shadow-md w-full sm:w-72 h-48">
                         <a href="{{ $result['link'] }}" target="_blank">
@@ -56,11 +56,11 @@
             </div>
         @endif
     </div>
-    @if(count($searchResults) == 0)
-        <div class="mt-10 text-center text-sm sm:text-base {{ $textColor != null ? 'text-' . $textColor : '' }}">
-            <a href="/{{ $pageUrl }}/episodes">
-                <p class="hover:underline">{{ $searchBarText ?? 'Check out all our episodes here!' }}</p>
-            </a>
-        </div>
-    @endif
+{{--    @if(count($searchResults) == 0)--}}
+{{--        <div class="mt-10 text-center text-sm sm:text-base {{ $textColor != null ? 'text-' . $textColor : '' }}">--}}
+{{--            <a href="/{{ $pageUrl }}/episodes">--}}
+{{--                <p class="hover:underline">{{ $searchBarText ?? 'Check out all our episodes here!' }}</p>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--    @endif--}}
 </div>

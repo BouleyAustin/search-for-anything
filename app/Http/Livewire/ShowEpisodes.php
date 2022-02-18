@@ -14,15 +14,18 @@ class ShowEpisodes extends Component
     public $pageId;
     public $pageUrl;
     public $pageImage;
+    public $pageDetails;
 
     public function mount()
     {
-        $this->pageUrl = Page::where('id', $this->pageId)->first()->url_ending;
+        $this->pageUrl = $this->pageDetails['url_ending'];
+        $this->pageId = $this->pageDetails['id'];
+        $this->pageImage = $this->pageDetails['link_home'];
     }
 
     public function render()
     {
-        $contents = Content::where('page_id', $this->pageId)->paginate(24);
+        $contents = Content::where('page_id', $this->pageId)->paginate(10);
 
         return view('livewire.show-episodes', [
             'contents' => $contents,
