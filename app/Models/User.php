@@ -80,7 +80,7 @@ class User extends Authenticatable
 
     public function getSubscription()
     {
-        if($this->email == 'marketingsecretstest@gmail.com' || $this->email == 'marketingincartest@gmail.com' || $this->email == 'jordanpetersontest@gmail.com'){
+        if($this->email == 'marketingsecretstest@gmail.com' || $this->email == 'marketinginyourcartest@gmail.com' || $this->email == 'jordanpetersontest@gmail.com'){
             return true;
         }
 

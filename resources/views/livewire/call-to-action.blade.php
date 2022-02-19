@@ -230,11 +230,12 @@
                     {{ __('Close') }}
                 </x-jet-secondary-button>
                 <x-jet-secondary-button class="ml-2" wire:click="saveEditing" wire:loading.attr="disabled">
-                    {{ __('Edit Call To Action') }}
+                    {{ __('Edit CTA') }}
                 </x-jet-secondary-button>
-                <div wire:loading wire:target="saveEditing">
-                    Loading...
-                </div>
+                <x-jet-secondary-button class="ml-2" wire:click="addToAll">
+                    {{ __('Add To All Episodes') }}
+                </x-jet-secondary-button>
+                <div wire:loading wire:target="addToAll">Loading...</div>
             </div>
         </x-slot>
     </x-jet-dialog-modal>

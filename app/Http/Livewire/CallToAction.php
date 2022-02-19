@@ -97,6 +97,20 @@ class CallToAction extends Component
         $this->mount();
     }
 
+    public function addToAll()
+    {
+        $contents = Auth::user()->pages()->first()->contents()->where('cta_id', null)->pluck('id')->toArray();
+
+        foreach($contents as $id){
+            $updateContent = Content::where('id', $id)->first();
+            $updateContent->show_cta = true;
+            $updateContent->cta_id = $this->callToAction['id'];
+            $updateContent->save();
+        }
+
+        $this->mount();
+    }
+
     public function deleteCTA($ctaId)
     {
         $contentsWithCTA = Content::where('cta_id', $ctaId)->get()->toArray();

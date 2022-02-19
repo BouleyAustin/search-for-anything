@@ -7,8 +7,8 @@
                 wire:keydown.escape="clear"
                 type="search"
                 placeholder="{{ $searchBarInput ?? 'What do you want to learn about?' }}"
-                class="border shadow-xs hover:border-gray-300 block w-full sm:text-sm border-gray-200 rounded-md text-center"
-                required autofocus>
+                class="border shadow-xs hover:border-gray-300 block w-full sm:text-sm border-gray-300 rounded-md text-center"
+                required>
             <x-jet-secondary-button wire:click="search">
                 <p>&#128270;</p>
             </x-jet-secondary-button>

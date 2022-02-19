@@ -280,12 +280,14 @@
                     </a>
                     <a href="\marketing-in-your-car" target="_blank">
                         <div class="col-span-1 py-8 px-8 bg-gray-50">
-                            <img class="w-full h-full" src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts126/v4/f5/f6/03/f5f60342-fc38-dabe-a730-78b8874bf7c2/mza_3695672988626510328.jpg/600x600bb.jpg"/>
+                            <img class="w-full h-full" src="https://podcast-api-images.s3.amazonaws.com/corona/show/64179/logo_300x300.jpeg"/>
                         </div>
                     </a>
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <img class="w-full h-full" src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts124/v4/23/9e/6a/239e6a8f-70c2-3c4c-05a3-8c39b6252e9d/mza_16524585751342588571.jpg/313x0w.webp"/>
-                    </div>
+                    <a href="\jordan-peterson" target="_blank">
+                        <div class="col-span-1 py-8 px-8 bg-gray-50">
+                            <img class="w-full h-full" src="https://is5-ssl.mzstatic.com/image/thumb/Podcasts126/v4/50/6f/33/506f33d9-05d0-8537-caba-41105e071c9e/mza_15187147505185982871.jpg/313x0w.webp"/>
+                        </div>
+                    </a>
                     <a href="\marketing-secrets" target="_blank">
                         <div class="col-span-1 py-8 px-8 bg-gray-50">
                             <img class="w-full h-full" src="https://ssl-static.libsyn.com/p/assets/f/0/c/4/f0c4044a22f70e2f/Marketing_Secrets_-_V3.jpg"/>
