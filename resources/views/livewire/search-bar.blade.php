@@ -56,11 +56,9 @@
             </div>
         @endif
     </div>
-{{--    @if(count($searchResults) == 0)--}}
-{{--        <div class="mt-10 text-center text-sm sm:text-base {{ $textColor != null ? 'text-' . $textColor : '' }}">--}}
-{{--            <a href="/{{ $pageUrl }}/episodes">--}}
-{{--                <p class="hover:underline">{{ $searchBarText ?? 'Check out all our episodes here!' }}</p>--}}
-{{--            </a>--}}
-{{--        </div>--}}
-{{--    @endif--}}
+    @if(count($searchResults) == 0 && $test)
+        <div class="mt-10 text-center text-sm sm:text-base {{ $textColor != null ? 'text-' . $textColor : '' }}">
+            <p>This is not an official website! This is a test site made by SearchPod.io. All rights belong to the original creator.</p>
+        </div>
+    @endif
 </div>

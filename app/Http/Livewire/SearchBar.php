@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Services\HelperService;
 use App\Services\SearchService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
@@ -18,6 +19,12 @@ class SearchBar extends Component
     public $textColor;
     public $pageId;
     public $searched = false;
+    public $test;
+
+    public function mount()
+    {
+        $this->test = HelperService::testAccount($this->pageUrl);
+    }
 
     public function search()
     {

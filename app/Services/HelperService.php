@@ -9,6 +9,7 @@ use App\Models\Content;
 use App\Models\Page;
 use App\Models\PageViews;
 use App\Models\Transcription;
+use App\Models\User;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -95,6 +96,14 @@ class HelperService
                 'email' => $email,
             ]);
         }
+    }
+
+    public static function testAccount($pageUrl)
+    {
+        $userId = Page::where('url_ending', $pageUrl)->first()->user_id;
+        $email = User::where('id', $userId)->first()->email;
+
+        return $email == 'marketingsecretstest@gmail.com' || $email == 'marketinginyourcartest@gmail.com' || $email == 'jordanpetersontest@gmail.com';
     }
 
     public static function deleteFromAmazons3($url)
