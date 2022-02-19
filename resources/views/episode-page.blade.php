@@ -50,15 +50,10 @@
                     <div class="p-5">
                         <p class="mt-5 text-center text-xl sm:text-3xl text-black">{{ $content['title'] }}</p>
                         <div class="mt-10 flex justify-center">
-                            <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="{{ $embedLink }}"></iframe>
+                            <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="{{ str_contains($embedLink, 'apple') ? 175 : 100 }}" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="{{ $embedLink }}"></iframe>
                         </div>
                         <div class="mt-10 text-center text-black">
-                            <p class="text-lg sm:text-xl">In This Episode, you'll learn:</p>
-                            <div class="text-md mt-5">
-                                <p class="mt-3">How To Swing Trade Stocks</p>
-                                <p class="mt-3">Swing Trading Strategies</p>
-                                <p class="mt-3">The Best Stocks For Swing Trading</p>
-                            </div>
+                            <p>{!! $content['summary'] !!}</p>
                         </div>
                         <div class="mt-12 mb-5 text-sm text-center text-black">
                             <p>Listen on other platforms</p>

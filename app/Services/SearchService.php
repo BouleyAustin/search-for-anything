@@ -62,6 +62,13 @@ class SearchService
         elseif(str_contains($link, 'buzzsprout')){
             return $link;
         }
+        elseif(str_contains($link, 'megaphone')){
+            return $link;
+        }
+        elseif(str_contains($link, 'libsyn')){
+            $content = Content::where('podcast_link', $link)->first();
+            return '//html5-player.libsyn.com/embed/episode/id/' . $content->tags . '/height/90/theme/custom/thumbnail/yes/direction/forward/render-playlist/no/custom-color/000000/';
+        }
         else{
             return $link;
         }

@@ -14,7 +14,6 @@ class CustomizeSearchPage extends Component
         'pageDetails.search_title' => 'required|string',
         'pageDetails.sub_search_title' => 'required|string',
         'pageDetails.search_bar_input' => 'required|string',
-        'pageDetails.search_bar_text' => 'required|string',
         'pageDetails.text_color' => 'required|string',
         'pageDetails.background_color' => 'required|string',
     ];
@@ -33,7 +32,6 @@ class CustomizeSearchPage extends Component
         $update->search_title = $this->pageDetails['search_title'];
         $update->sub_search_title = $this->pageDetails['sub_search_title'];
         $update->search_bar_input = $this->pageDetails['search_bar_input'];
-        $update->search_bar_text = $this->pageDetails['search_bar_text'];
         $update->text_color = $this->pageDetails['text_color'];
         $update->background_color = $this->pageDetails['background_color'];
         $update->save();

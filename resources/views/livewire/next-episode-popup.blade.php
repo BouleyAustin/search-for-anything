@@ -13,10 +13,10 @@
                         <p class="mb-5 text-base sm:text-lg">Checkout Our Newest Podcast Episode:</p>
                         <a href="{{ $content['link'] }}">
                             <div class="flex flex-col sm:flex-row justify-left items-center gap-3">
-                                <img class="w-28 h-28" src="https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg"/>
+                                <img class="w-28 h-28" src="{{ $pageImage ?? 'https://rachelcorbett.com.au/wp-content/uploads/2018/07/Neon-podcast-logo.jpg' }}"/>
                                 <div>
                                     <p>{{ $content['title'] }}</p>
-                                    <p class="mt-2 text-sm text-gray-800">Summary: {{ substr($content['summary'], 0, 200) }}...</p>
+                                    <p class="mt-2 text-sm text-gray-800">Summary: {!! substr($content['summary'], 0, 200) !!}...</p>
                                 </div>
                             </div>
                         </a>
