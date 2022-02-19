@@ -51,7 +51,7 @@
     <footer class="mb-10 mt-24">
         <div class="text-center text-black">
             <div class="mb-5">
-                <a href="{{ route('landing') }}"><p class="hover:underline text-sm sm:text-base">Want Your Own Search Engine? Click Here!</p></a>
+                <a href="{{ route('landing') }}"><p class="hover:underline text-sm sm:text-base">Want Your Own Podcast Search Engine? Click Here!</p></a>
             </div>
             <div class="flex gap-4 justify-center items-center text-gray-400">
                 <div>

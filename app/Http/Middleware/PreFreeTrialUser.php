@@ -16,7 +16,7 @@ class PreFreeTrialUser
      */
     public function handle(Request $request, Closure $next)
     {
-        $subscription = $request->user()->subscribed('Founding Member SP');
+        $subscription = $request->user()->getSubscription();
 
         if ($request->user() && !$subscription) {
             return redirect(route('payment'));

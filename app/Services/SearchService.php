@@ -85,13 +85,6 @@ class SearchService
                 'priority' => $priority,
             ]);
 
-            array_push($urls, [
-                'url' => $url . '/episodes',
-                'mod' => $mod,
-                'freq' => $freq,
-                'priority' => .75,
-            ]);
-
             $contents = Content::where('page_id', $page->id)->get();
             foreach($contents as $content){
                 $contentUrl = $url . '/episodes/' . $content->url_ending;

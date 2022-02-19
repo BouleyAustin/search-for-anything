@@ -261,8 +261,8 @@
         <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
                 <div>
-                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Podcasters using SearchPod.io</h2>
-                    <p class="mt-3 max-w-3xl text-lg text-gray-500">These podcasters see the potential of SearchPod.io exclusive podcast search engine and SEO automation! You'll be able to check out their search engine once they are fully setup.</p>
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Examples Of SearchPod.io</h2>
+                    <p class="mt-3 max-w-3xl text-lg text-gray-500">Check out these sites and image what your site could be like! These sites are fully optimized for SEO, searchable and were created in less than 3 minutes!</p>
                     <div class="mt-8 sm:flex">
                         <div class="rounded-md shadow">
                             <a href="{{ route('register') }}" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Join BETA Access</a>
@@ -273,18 +273,24 @@
                     </div>
                 </div>
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <img class="w-full h-full" src="https://is4-ssl.mzstatic.com/image/thumb/Podcasts125/v4/3f/b1/7e/3fb17e9c-37ec-edf3-3e9a-3f8923d07023/mza_3029821249158272722.jpg/313x0w.webp"/>
-                    </div>
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <img class="w-full h-full" src="https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/12538696/12538696-1618504756926-070271af10e81.jpg"/>
-                    </div>
+                    <a href="\theimpeccableinvestor" target="_blank">
+                        <div class="col-span-1 py-8 px-8 bg-gray-50">
+                            <img class="w-full h-full" src="https://is4-ssl.mzstatic.com/image/thumb/Podcasts125/v4/3f/b1/7e/3fb17e9c-37ec-edf3-3e9a-3f8923d07023/mza_3029821249158272722.jpg/313x0w.webp"/>
+                        </div>
+                    </a>
+                    <a href="\marketing-in-your-car" target="_blank">
+                        <div class="col-span-1 py-8 px-8 bg-gray-50">
+                            <img class="w-full h-full" src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts126/v4/f5/f6/03/f5f60342-fc38-dabe-a730-78b8874bf7c2/mza_3695672988626510328.jpg/600x600bb.jpg"/>
+                        </div>
+                    </a>
                     <div class="col-span-1 py-8 px-8 bg-gray-50">
                         <img class="w-full h-full" src="https://is3-ssl.mzstatic.com/image/thumb/Podcasts124/v4/23/9e/6a/239e6a8f-70c2-3c4c-05a3-8c39b6252e9d/mza_16524585751342588571.jpg/313x0w.webp"/>
                     </div>
-                    <div class="col-span-1 py-8 px-8 bg-gray-50">
-                        <img class="w-full h-full" src="https://storage.buzzsprout.com/variants/4kstv9uwa7gxbiu7x2kd883j9rx8/b49cbe86cb411762753e730c58953bb88ad958a9d657212c074729b6f04e5463.jpg"/>
-                    </div>
+                    <a href="\marketing-secrets" target="_blank">
+                        <div class="col-span-1 py-8 px-8 bg-gray-50">
+                            <img class="w-full h-full" src="https://ssl-static.libsyn.com/p/assets/f/0/c/4/f0c4044a22f70e2f/Marketing_Secrets_-_V3.jpg"/>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
