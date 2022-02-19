@@ -43,10 +43,12 @@
                                         <p class="text-wrap font-bold">{{ $result['title'] }}</p>
                                     </div>
                                 </div>
-                                <div class="mt-3 text-left whitespace-wrao text-sm">
-                                    <b>Starts At:</b> {{ $result['starts_at'] }}
-                                </div>
-                                <div class="mt-3 mb-2 text-left whitespace-wrap text-sm">
+                                @if($result['starts_at'])
+                                    <div class="mt-3 text-left whitespace-wrao text-sm">
+                                        <b>Starts At:</b> {{ $result['starts_at'] }}
+                                    </div>
+                                @endif
+                                <div class="{{ $result['starts_at'] != null ? 'mt-3' : 'mt-5' }} mb-2 text-left whitespace-wrap text-sm">
                                     <b>Summary:</b> {{ $result['sentence'] }}...
                                 </div>
                             </div>

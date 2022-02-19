@@ -18,7 +18,7 @@ class SearchService
 
         $result = [];
         $searchResults = Transcription::where('page_id', $pageId)
-            ->where('starts_at', '!=', NULL)
+            ->where('sentence', '!=', '')
             ->where('sentence', 'LIKE', "%$search%")
             ->take(9)
             ->get()
