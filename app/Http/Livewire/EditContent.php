@@ -65,7 +65,7 @@ class EditContent extends Component
         $updateContent->meta_keywords = $this->content['meta_keywords'];
         $updateContent->save();
 
-        if($updateContent->transcript() == null && $this->file != null){
+        if(count($updateContent->transcript()->get()) == 0 && $this->file != null){
             $file = $this->file->store('txt');
             $txtUrl = Storage::url($file);
 

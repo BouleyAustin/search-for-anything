@@ -16,7 +16,13 @@ class TranscriptionService
 
         $text = str_replace("\n", "", $text);
         $text = str_replace("===", " ", $text);
+        $text = str_replace("\r", " ", $text);
+
         $split = preg_split("/(?=\[(?:[01]\d|2[0123]):(?:[012345]\d):(?:[012345]\d)\])/", $text);
+
+        if(count($split) == 1){
+            $split = preg_split("/(?:(\d{1,2}):)?(\d{1,2}):(\d{2})/", $text);
+        }
 
         if($content = Content::where('id', $contentId)->first()){
             foreach($split as $section){

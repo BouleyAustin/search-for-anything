@@ -17,10 +17,20 @@ class SearchService
         $pageUrl = Page::where('id', $pageId)->first()->url_ending;
 
         $result = [];
-        $searchResults = Transcription::where('page_id', $pageId)
-            ->where('sentence', '!=', '')
-            ->where('sentence', 'LIKE', "%$search%")
-            ->take(9)
+        $searchResults = Transcription::where('page_id', $pageId)->where('sentence', '!=', '');
+
+        $search = preg_split('/\s+/', $search, -1, PREG_SPLIT_NO_EMPTY);
+
+
+        foreach($search as $item){
+            $temp = $searchResults;
+
+            if(count($temp->where('sentence', 'LIKE', "%$item%")->get()->toArray()) > 10){
+                $searchResults = $searchResults->where('sentence', 'LIKE', "%$item%");
+            }
+        }
+
+        $searchResults = $searchResults->take(9)
             ->get()
             ->toArray();
 
