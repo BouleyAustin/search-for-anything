@@ -234,7 +234,7 @@
                                             @endif
                                         </div>
                                         <div>
-                                            <p class="text-md text-gray-900">Share With Your Audience and Start Growing</p>
+                                            <p class="text-md text-gray-900">Claim Your 15 Hours Of FREE Transcription</p>
                                         </div>
                                     </div>
                                     <div @click="dropdown = !dropdown" class="flex justify-right items-center space-x-3">
@@ -248,18 +248,23 @@
                                     </div>
                                 </div>
                                 <div style="display: none" x-show="dropdown == true" class="p-3 text-left">
-                                    <p class="text-left text-gray-600 mb-3 mt-3">Copy your search page link below and share it with your audience! They'll love your new site plus the initial traffic will help it rank higher in Google :)</p>
-                                    <div class="mt-3 mb-5">
-                                       <div class="bg-white p-3 rounded-lg">
-                                          <p>https://www.searchpod.io/{{ $pageDetails['url_ending'] }}</p>
-                                       </div>
-                                    </div>
-                                    <a href="{{ route('custom') }}">
-                                        <p class="mt-3 mb-5 text-gray-600 underline">Change/Customize Your Link</p>
+                                    <p class="text-left text-gray-600 mb-3 mt-3">Schedule a short call with Austin (the CEO and Develoepr behind this software)! On the call, I will get to know you, how I can better serve you and the episodes you want transcribed for free.</p>
+{{--                                    <div class="mt-3 mb-5">--}}
+{{--                                       <div class="bg-white p-3 rounded-lg">--}}
+{{--                                          <p>https://www.searchpod.io/{{ $pageDetails['url_ending'] }}</p>--}}
+{{--                                       </div>--}}
+{{--                                    </div>--}}
+{{--                                    <a href="{{ route('custom') }}">--}}
+{{--                                        <p class="mt-3 mb-5 text-gray-600 underline">Change/Customize Your Link</p>--}}
+{{--                                    </a>--}}
+{{--                                    <x-jet-secondary-button wire:click="shareSite">--}}
+{{--                                        Click When Done Sharing!--}}
+{{--                                    </x-jet-secondary-button>--}}
+                                    <a wire:click="shareSite" href="https://calendly.com/impeccable-software/discovery" target="_blank">
+                                        <x-jet-secondary-button>
+                                            Schedule a call!
+                                        </x-jet-secondary-button>
                                     </a>
-                                    <x-jet-secondary-button wire:click="shareSite">
-                                        Click When Done Sharing!
-                                    </x-jet-secondary-button>
                                 </div>
                             </div>
                         </div>
