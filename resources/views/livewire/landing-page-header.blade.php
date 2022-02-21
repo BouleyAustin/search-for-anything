@@ -21,7 +21,7 @@
                     <rect x="118" width="404" height="784" fill="url(#4f4f415c-a0e9-44c2-9601-6ded5a34a13e)" />
                 </svg>
                 <div class="relative mx-auto w-full rounded-lg shadow-xl">
-                    <div style="padding:56.16% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/678865426?h=90048b740f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Screen Recording 2022-01-31 at 110523 AM"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                    <div style="padding:56.16% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/680035433?h=98656eec21&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Screen Recording 2022-01-31 at 110523 AM"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
                 </div>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <x-slot name="content">
 
             <div class="mt-4">
-                <div style="padding:56.6% 0 0 0;position:relative;"><iframe src="https://youtube.com/embed/nJpM-TRFTYc" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+                <div style="padding:56.6% 0 0 0;position:relative;"><iframe src="https://youtube/embed/vYc0ZrFWHn4" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
             </div>
 
         </x-slot>
