@@ -5,9 +5,6 @@
                 <div class="bg-white overflow-hidden shadow-xl rounded-lg">
                     <div class="lg:pl-36 lg:pr-36 lg:pt-5 lg:pb-10">
                         <div class="p-3 text-center">
-                            <div class="p-3 w-full mb-5 bg-green-100 rounded">
-                                <p>The 25% OFF Product Hunt Discount Has Been Applied!</p>
-                            </div>
                             <div class="flex justify-center items-center">
                                 <div class="">
                                     <img src="/offer-1.png"/>

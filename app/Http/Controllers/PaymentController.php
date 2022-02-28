@@ -40,8 +40,7 @@ class PaymentController extends Controller
 
         }
 
-        $subscription->withCoupon('w4o8VJ5f')
-            ->create($request->paymentMethod);
+        $subscription->create($request->paymentMethod);
 
         $newPage = new Page();
         $newPage->name = $user->name;
