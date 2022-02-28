@@ -45,7 +45,7 @@
                         @endif
                         @if($pageDetails['stitcher_link'] != null)
                             <a href="{{ $pageDetails['stitcher_link'] }}" target="_blank">
-                                <img class="h-12 w-auto"  src="stitcher-badge.png">
+                                <img class="h-12 w-auto"  src="\stitcher-badge.png">
                             </a>
                         @endif
                     </div>

@@ -26,8 +26,8 @@
             </div>
         </div>
         <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center">
-            <a href="{{ route('register') }}">
-                <button class="mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">JOIN AS A FOUNDING MEMBER!</button>
+            <a href="{{ route('preview') }}">
+                <button class="mt-3 w-full px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 shadow-sm hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:flex-shrink-0 sm:inline-flex sm:items-center sm:w-auto">PREVIEW YOUR PODCAST SITE (FREE)</button>
             </a>
         </div>
     </div>

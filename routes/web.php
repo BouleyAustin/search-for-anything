@@ -23,6 +23,10 @@ Route::middleware(['auth:sanctum', 'verified', 'payment'])->get('/app/custom', f
     return view('custom');
 })->name('custom');
 
+Route::get('/app/preview', function () {
+    return view('preview');
+})->name('preview');
+
 Route::get('/', function () {
     return view('landing');
 })->name('landing');

@@ -274,4 +274,20 @@ class RSSHelper
             }
         }
     }
+
+    public static function getPreviewTitles($rss)
+    {
+        $rssFeed = FeedReader::read($rss)->get_items();
+        $titles = [];
+
+        foreach($rssFeed as $item) {
+            array_push($titles, $item->get_title());
+        }
+
+        if(count($titles) > 4){
+            $titles = array_slice($titles, 0, 4, true);
+        }
+
+        return $titles;
+    }
 }
