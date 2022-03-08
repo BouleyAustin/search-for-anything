@@ -25,6 +25,7 @@ class RSSHelper
             $author = $item->get_author()->name;
             $hostLink = $item->get_link();
             $duration = intval($item->data['child']['http://www.itunes.com/dtds/podcast-1.0.dtd']['duration'][0]['data']);
+            $audioUrl = $item->data['child']['']['enclosure'][0]['attribs']['']['url'];
 
             try{
                 $imageUrl = $item->data['child']['http://www.itunes.com/dtds/podcast-1.0.dtd']['image'][0]['attribs']['']['href'];
@@ -66,6 +67,7 @@ class RSSHelper
                 $newContent->platform = 'podcast';
                 $newContent->people = $author;
                 $newContent->length = $duration;
+                $newContent->audio_url = $audioUrl;
                 $page->contents()->save($newContent);
             }
         }
@@ -207,6 +209,7 @@ class RSSHelper
             $author = $latest->get_author()->name;
             $hostLink = $latest->get_link();
             $duration = intval($latest->data['child']['http://www.itunes.com/dtds/podcast-1.0.dtd']['duration'][0]['data']);
+            $audioUrl = $latest->data['child']['']['enclosure'][0]['attribs']['']['url'];
 
             if(!Content::where('podcast_link', $hostLink)->first()) {
                 $newContent = new Content();
@@ -258,6 +261,7 @@ class RSSHelper
                 $newContent->platform = 'podcast';
                 $newContent->people = $author;
                 $newContent->length = $duration;
+                $newContent->audio_url = $audioUrl;
                 $page->contents()->save($newContent);
 
                 if($transcript != null){
@@ -269,6 +273,8 @@ class RSSHelper
                         $newContent->transcript()->save($newItem);
                     }
                 }
+
+                TranscriptionService::uploadTranscripts($audioUrl, $newContent->id, $id);
 
                 echo 'done: ' . $title . "\n";
             }
@@ -289,5 +295,28 @@ class RSSHelper
         }
 
         return $titles;
+    }
+
+    public static function getAudioUrls()
+    {
+        $pages = Page::all();
+
+        foreach($pages as $page){
+            $podcastRss = $page->podcast_rss;
+
+            $rssFeed = FeedReader::read($podcastRss)->get_items();
+
+            foreach($rssFeed as $item){
+                $audioUrl = $item->data['child']['']['enclosure'][0]['attribs']['']['url'];
+                $hostLink = $item->get_link();
+
+                if($content = Content::where('podcast_link', $hostLink)->first()){
+                    $content->audio_url = $audioUrl;
+                    $content->save();
+
+                    echo 'Done' . "/n";
+                }
+            }
+        }
     }
 }

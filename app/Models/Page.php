@@ -28,4 +28,9 @@ class Page extends Model
     {
         return $this->hasMany(SearchHistory::class);
     }
+
+    public function transcriptProcessing()
+    {
+        return $this->hasMany(TranscriptProcessing::class);
+    }
 }
