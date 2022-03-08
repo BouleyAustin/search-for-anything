@@ -86,4 +86,9 @@ class User extends Authenticatable
 
         return Subscription::where('user_id', $this->id)->first();
     }
+
+    public function isAdmin()
+    {
+        return $this->email == 'bouleyaustin@gmail.com';
+    }
 }

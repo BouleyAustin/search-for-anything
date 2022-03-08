@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,10 @@ Route::middleware(['auth:sanctum', 'verified', 'payment'])->get('/app/custom', f
 Route::get('/app/preview', function () {
     return view('preview');
 })->name('preview');
+
+Route::get('/app/admin', function () {
+    return view('admin-portal');
+})->name('admin');
 
 Route::get('/', function () {
     return view('landing');

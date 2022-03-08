@@ -21,6 +21,12 @@
                     <x-jet-nav-link href="{{ route('content') }}" :active="request()->routeIs('content')">
                         {{ __('Content') }}
                     </x-jet-nav-link>
+
+                    @if(Auth::user()->isAdmin())
+                        <x-jet-nav-link href="{{ route('admin') }}" :active="request()->routeIs('admin')">
+                            {{ __('Admin') }}
+                        </x-jet-nav-link>
+                    @endif
                 </div>
             </div>
 
